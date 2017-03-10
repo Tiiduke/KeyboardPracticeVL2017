@@ -14,6 +14,14 @@
 
 //-->
 
+<!--
+To whom it may concern:
+http://matthewjamestaylor.com/blog/keeping-footers-at-the-bottom-of-the-page
+This webpage has a few tips on how to use CSS to properly jam the footer
+at the bottom where it should belong.
+It even notes all the browsers where it should work guaranteed.
+-->
+
 <footer class="bs-docs-footer">
 
 	
