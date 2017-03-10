@@ -32,8 +32,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	            	<li><a href="" class="navbar-brand">Pollerina</a></li>
 	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/">Home</a></li>
 	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/findPolls">Find Polls</a></li>
-	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/none3">Your Polls</a></li>
-					<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/none4">Account</a></li>
+	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/yourPolls">Your Polls</a></li>
+					<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/account">Account</a></li>
 	            </ul>
 	        </div>
 	    </div>

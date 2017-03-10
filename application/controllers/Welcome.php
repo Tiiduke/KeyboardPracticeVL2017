@@ -50,10 +50,19 @@ class Welcome extends CI_Controller {
 	}
 	public function statistics()
 	{}
-	public function yourPolls()
-	{}
+	public function yourPolls() //probably needs to be logged in as well
+	{
+		$title['title'] = 'Find Polls';
+		$this->load->view('header', $title);
+		$this->load->view('yourPolls');
+		$this->load->view('footer');
+	}
 	public function account()//needs login before proper usage
-	{}
+	{
+		$title['title'] = 'Find Polls';
+		$this->load->view('header', $title);
+		$this->load->view('account');
+		$this->load->view('footer');}
 	public function guestAdditInfo()//when making a poll as a guest
 	{} 
 
