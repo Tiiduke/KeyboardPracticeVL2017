@@ -18,21 +18,51 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
+	public function index() //homepage
 	{
 		$title['title'] = 'Esilehekülg';
 		$this->load->view('header', $title);
 		$this->load->view('welcome_message');
 		$this->load->view('footer');
 	}
-	public function template1(){
+	
+	public function about()
+	{
+		$title['title'] = 'About us';
+		$this->load->view('header', $title);
+		$this->load->view('about');
+		$this->load->view('footer');
+		
+	}
+	public function contactUs()
+	{
+		$title['title'] = 'About us';
+		$this->load->view('header', $title);
+		$this->load->view('contactUs');
+		$this->load->view('footer');
+	}
+	public function findPolls()
+	{}
+	public function statistics()
+	{}
+	public function yourPolls()
+	{}
+	public function account()//needs login before proper usage
+	{}
+	public function guestAdditInfo()//when making a poll as a guest
+	{} 
+
+	
+	public function template1()
+	{
 		$title['title'] = 'template 1';
 		//$this->load->view('menu', $title);
 		//siia saab siis lisada header
 		$this->load->view('test_template1');
-		//siia saab siis lisada footer
+		$this->load->view('footer');
 	}
-	public function template2(){
+	public function template2()
+	{
 		$title['title'] = 'template 2';
 		//$this->load->view('menu', $title);
 		//siia saab siis lisada header
@@ -40,4 +70,7 @@ class Welcome extends CI_Controller {
 		//siia saab siis lisada footer
 	}
 	
+	
+	
+		
 }
