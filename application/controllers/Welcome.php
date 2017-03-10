@@ -42,7 +42,12 @@ class Welcome extends CI_Controller {
 		$this->load->view('footer');
 	}
 	public function findPolls()
-	{}
+	{
+		$title['title'] = 'Find Polls';
+		$this->load->view('header', $title);
+		$this->load->view('findPolls');
+		$this->load->view('footer');
+	}
 	public function statistics()
 	{}
 	public function yourPolls()

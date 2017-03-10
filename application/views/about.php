@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+	
 
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css" type="text/css" />
 	<style>
@@ -45,12 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <div id="container">
 	<h1>About us:</h1>
-	<!--set_radio($field[, $value = ''[, $default = FALSE]])-->
-	<form>
-	</form>
-	<input type="radio" name="myradio" value="1" <?php echo  set_radio('myradio', '1', FALSE); ?> />
-	<input type="radio" name="myradio" value="2" <?php echo  set_radio('myradio', '2', FALSE); ?> />
-
+	
 	<div id="body">
 		<p>This is a poll environment created for the WebApp Development course of the University of Tartu, throught the spring of 2016/2017. afnakdvnsdmefecnsmkla</p>
 	</div>
