@@ -23,25 +23,12 @@ It even notes all the browsers where it should work guaranteed.
 -->
 
 <footer class="bs-docs-footer">
-
-	
-	<!--Menu Items-->
-	<div class="container">
-		::before
-	    <ul class="bs-docs-footer-links">
-
-	        <li>
-			<a href="<?php echo base_url(); ?>index.php/welcome/about">About</a>
-			</li>
-	       <li>
-		   <a href="<?php echo base_url(); ?>index.php/welcome/contactUs">Contact us</a>
-		   </li>
-	    </ul>
-		<p>2017, Pollerina, UT Estonia</p>
-		::after
+	<div class="container-fluid" .text-center>
+	    <p class="text-center">
+		<a href="<?php echo base_url(); ?>index.php/welcome/about">About</a>
+		 | <a href="<?php echo base_url(); ?>index.php/welcome/contactUs">Contact us</a>
+		 | 2017, Pollerina, UT Estonia
+		</p>
 	</div>
-	</footer>
-	
-	
-</body>
-</html>
+</footer>
+

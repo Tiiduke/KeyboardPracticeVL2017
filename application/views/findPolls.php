@@ -1,6 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -39,6 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       }
       .row.content {height:auto;} 
     }
+	
   </style>
 </head>
 <body>
@@ -79,10 +78,61 @@ JavaScript, or PHP, whichever strikes your fancy more.
 		
 	</div>
 	
-	
-	<!--insert date filters-->
-	
-	
+	<div>
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+			<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+			<link rel="stylesheet" href="/resources/demos/style.css">
+			<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+			<script>
+				$( function() {
+				var dateFormat = "mm/dd/yy",
+					from = $( "#from" )
+						.datepicker({
+						defaultDate: "-1d",
+						maxDate: "+0d",
+						changeMonth: true,
+						numberOfMonths: 3
+						})
+						.on( "change", function() {
+							to.datepicker( "option", "minDate", getDate( this ) );
+						}),
+					to = $( "#to" ).datepicker({
+						defaultDate: "+0d",
+						maxDate: "+0d",
+						changeMonth: true,
+						numberOfMonths: 3
+					})
+					.on( "change", function() {
+						from.datepicker( "option", "maxDate", getDate( this ) );
+					});
+			 
+				function getDate( element ) {
+					var date;
+					try {
+						date = $.datepicker.parseDate( dateFormat, element.value );
+					} catch( error ) {
+						date = null;
+					}
+			 
+				return date;
+				}
+				} );
+			</script>
+		</head>
+		<body>
+		 
+		Filter by age:
+		<label for="from">From </label>
+		<input type="text" id="from" name="from">
+		<label for="to">to</label>
+		<input type="text" id="to" name="to">
+		 
+		 
+		</body>
+	</div>
 	
 	<div id="newOrOld">
 		Search by time: 
@@ -106,8 +156,8 @@ JavaScript, or PHP, whichever strikes your fancy more.
 	<label for="active">Active</label>
 	<input type="radio" name="pollActivity" id="closed" value="2">
 	<label for="closed">Closed</label>
-	<input type="radio" name="pollActivity" id="both" value="3" checked="checked">
-	<label for="both">Both</label>
+	<input type="radio" name="pollActivity" id="all" value="3" checked="checked">
+	<label for="all">All</label>
 	</div>
 	
 	

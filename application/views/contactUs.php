@@ -1,55 +1,58 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	
-
-	<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css" type="text/css" />
-	<style>
-    /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    .row.content {height: 450px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
-    /* Set black background color, white text and some padding */
-    footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
-    }
-    
-    /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
-      .sidenav {
-        height: auto;
-        padding: 15px;
-      }
-      .row.content {height:auto;} 
-    }
-  </style>
-</head>
+<!DOCTYPE html>
+<html>
 <body>
-
 <div id="container">
 	<h1>Contact us:</h1>
-
-	<div id="body">
-		<p>Contact us by e-mail: pollerina.ut@gmail.com</p>
-		<p>This is a poll environment created for the WebApp Development course of the University of Tartu, throught the spring of 2016/2017. afnakdvnsdmefecnsmkla</p>
-	</div>
-
+	Pollerina<br>
+	Liivi 2<br>
+	50409 Tartu<br>
+	ESTONIA<br>
+	<p>E-mail: <a href="mailto:pollerina.ut@gmail.com">pollerina.ut@gmail.com</a></p>
+		
+	<div id="googleMap1" style="width:100%;height:300px;"></div>
+	<br>
+	<div id="googleMap2" style="width:100%;height:300px;"></div>
 	
+	<script>
+	function initMap() {
+		var myLatLng = {lat: 58.3782485, lng: 26.7146733}
+		var mapOptions1 = {
+			center: new google.maps.LatLng(myLatLng),
+			zoom:17,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		var mapOptions2 = {
+			center: new google.maps.LatLng(myLatLng),
+			zoom:3,
+			mapTypeId: google.maps.MapTypeId.HYBRID
+		};
+		var map1 = new google.maps.Map(document.getElementById("googleMap1"),mapOptions1);
+		var map2 = new google.maps.Map(document.getElementById("googleMap2"),mapOptions2);
+		
+		marker1 = new google.maps.Marker({
+			position: myLatLng,
+			map: map1,
+			title: 'Pollerina HQ'
+		});
+		infowindow1 = new google.maps.InfoWindow({
+			content: "Pollerina HQ"
+		});
+		infowindow1.open(map1, marker1);
+
+		marker2 = new google.maps.Marker({
+			position: myLatLng,
+			map: map2,
+			title: 'Pollerina HQ'
+		});
+		infowindow2 = new google.maps.InfoWindow({
+			content: "Pollerina HQ"
+		});
+		infowindow2.open(map2, marker2);
+		}
+	</script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXxVAi9eXPXGLO8_Q2M9BV3DY1TNYX8Yg&callback=initMap"async defer></script>
+
 </div>
+</body>
+</html>

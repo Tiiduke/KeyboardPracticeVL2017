@@ -20,7 +20,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index() //homepage
 	{
-		$title['title'] = 'Esilehekülg';
+		$title['title'] = 'Home';
 		$this->load->view('header', $title);
 		$this->load->view('welcome_message');
 		$this->load->view('footer');
@@ -62,8 +62,9 @@ class Welcome extends CI_Controller {
 		$title['title'] = 'Find Polls';
 		$this->load->view('header', $title);
 		$this->load->view('account');
-		$this->load->view('footer');}
-	public function guestAdditInfo()//when making a poll as a guest
+		$this->load->view('footer');
+	}
+		public function guestAdditInfo()//when making a poll as a guest
 	{} 
 
 	
