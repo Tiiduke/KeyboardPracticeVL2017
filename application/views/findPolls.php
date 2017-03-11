@@ -56,40 +56,7 @@ JavaScript, or PHP, whichever strikes your fancy more.
 			<link rel="stylesheet" href="/resources/demos/style.css">
 			<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-			<script>
-				$( function() {
-				var dateFormat = "mm/dd/yy",
-					from = $( "#from" )
-						.datepicker({
-						defaultDate: "-1d",
-						maxDate: "+0d",
-						changeMonth: true,
-						numberOfMonths: 3
-						})
-						.on( "change", function() {
-							to.datepicker( "option", "minDate", getDate( this ) );
-						}),
-					to = $( "#to" ).datepicker({
-						defaultDate: "+0d",
-						maxDate: "+0d",
-						changeMonth: true,
-						numberOfMonths: 3
-					})
-					.on( "change", function() {
-						from.datepicker( "option", "maxDate", getDate( this ) );
-					});
-			 
-				function getDate( element ) {
-					var date;
-					try {
-						date = $.datepicker.parseDate( dateFormat, element.value );
-					} catch( error ) {
-						date = null;
-					}
-			 
-				return date;
-				}
-				} );
+			<script type="text/javascript" src="../../js/datepick.js">
 			</script>
 		</head>
 		<body>
