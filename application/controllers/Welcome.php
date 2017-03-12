@@ -28,7 +28,7 @@ class Welcome extends CI_Controller {
 	
 	public function about()
 	{
-		$title['title'] = 'About us';
+		$title['title'] = 'About';
 		$this->load->view('header', $title);
 		$this->load->view('about');
 		$this->load->view('footer');
@@ -36,7 +36,7 @@ class Welcome extends CI_Controller {
 	}
 	public function contactUs()
 	{
-		$title['title'] = 'About us';
+		$title['title'] = 'Contact Us';
 		$this->load->view('header', $title);
 		$this->load->view('contactUs');
 		$this->load->view('footer');
@@ -52,19 +52,19 @@ class Welcome extends CI_Controller {
 	{}
 	public function yourPolls() //probably needs to be logged in as well
 	{
-		$title['title'] = 'Find Polls';
+		$title['title'] = 'Your Polls';
 		$this->load->view('header', $title);
 		$this->load->view('yourPolls');
 		$this->load->view('footer');
 	}
 	public function account()//needs login before proper usage
 	{
-		$title['title'] = 'Find Polls';
+		$title['title'] = 'Account';
 		$this->load->view('header', $title);
 		$this->load->view('account');
 		$this->load->view('footer');
 	}
-		public function guestAdditInfo()//when making a poll as a guest
+	public function guestAdditInfo()//when making a poll as a guest
 	{} 
 
 	

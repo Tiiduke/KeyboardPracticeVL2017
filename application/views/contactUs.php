@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css" />
-<body>
 	<div id="container">
 		<h1>Contact us:</h1>
 		Pollerina<br>
@@ -15,7 +13,7 @@
 		<script type="text/javascript" src="../../js/map.js">
 		</script>
 
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXxVAi9eXPXGLO8_Q2M9BV3DY1TNYX8Yg&callback=initMap"async defer></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXxVAi9eXPXGLO8_Q2M9BV3DY1TNYX8Yg&callback=initMap" async defer></script>
 
 	</div>
 </body>

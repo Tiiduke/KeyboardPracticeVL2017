@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css" />
-
-<body>
 	<div id="container">
 		<h1>About us:</h1>
 		<div id="body">
