@@ -3,15 +3,9 @@ To whom it may concern: this view is intended to show a logged in persons
 polls, that they have made. Should you not be logged in, however, it should
 redirect you to the login screen
 -->
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css" />
 
-</head>
+<link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css" />
+
 <body>
 
 <table style="width:50%" border="1">
@@ -36,4 +30,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <td>80</td>
   </tr>
 </table>
-
+</body>

@@ -21,13 +21,7 @@ This webpage has a few tips on how to use CSS to properly jam the footer
 at the bottom where it should belong.
 It even notes all the browsers where it should work guaranteed.
 -->´
-
-<head>
-	<link rel="stylesheet" href="<?php echo base_url(); ?>css/footer.css"  type="text/css" />
-</head>
-
-
-
+<link rel="stylesheet" href="<?php echo base_url(); ?>css/footer.css"  type="text/css" />
 
 
 <footer class="bs-docs-footer">
@@ -39,4 +33,6 @@ It even notes all the browsers where it should work guaranteed.
 		</p>
 	</div>
 </footer>
-
+</link>
+</head>
+</html>

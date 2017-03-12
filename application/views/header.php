@@ -1,7 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,9 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	
-</head>
 <body>
-
 	<nav class="navbar navbar-default">
 	    <div class="container-fluid">
 	
@@ -38,4 +35,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	        </div>
 	    </div>
 	</nav>
-
+</body>
