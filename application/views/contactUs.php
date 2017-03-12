@@ -13,9 +13,9 @@
 	ESTONIA<br>
 	<p>E-mail: <a href="mailto:pollerina.ut@gmail.com">pollerina.ut@gmail.com</a></p>
 		
-	<div id="googleMap1" style="width:100%;height:300px;"></div>
+	<div id="googleMap1" style="width:400px;height:300px;"></div>
 	<br>
-	<div id="googleMap2" style="width:100%;height:300px;"></div>
+	<div id="googleMap2" style="width:400px;height:300px;"></div>
 	
 	<script type="text/javascript" src="../../js/map.js">
 	</script>
