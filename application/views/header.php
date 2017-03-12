@@ -2,9 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
 	
 	<?php 
     if(isset($title)){
@@ -13,13 +13,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     	echo "<title>Tiitli muutuja tühi</title>";
 	}
     ?>
-	<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.min.css"  type="text/css" />
-	<!-- Siia saab lisada bootstrap theme ka näiteks
+	
+	<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.css"  type="text/css" />
+	<link rel="stylesheet" href="<?php echo base_url(); ?>css/footer.css"  type="text/css" />
+	<link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css" />
+	<!-- Siia saab lisada bootstrap theme ka nt
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/navbar-theme2.css"  type="text/css" /> 
 	-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	
-<body>
 	<nav class="navbar navbar-default">
 	    <div class="container-fluid">
 	
@@ -35,4 +37,3 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	        </div>
 	    </div>
 	</nav>
-</body>

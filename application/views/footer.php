@@ -20,12 +20,9 @@ http://matthewjamestaylor.com/blog/keeping-footers-at-the-bottom-of-the-page
 This webpage has a few tips on how to use CSS to properly jam the footer
 at the bottom where it should belong.
 It even notes all the browsers where it should work guaranteed.
--->´
-<link rel="stylesheet" href="<?php echo base_url(); ?>css/footer.css"  type="text/css" />
-
-
+-->
 <footer class="bs-docs-footer">
-	<div class="container-fluid" .text-center>
+	<div class="container-fluid">
 	    <p class="text-center">
 		<a href="<?php echo base_url(); ?>index.php/welcome/about">About</a>
 		 | <a href="<?php echo base_url(); ?>index.php/welcome/contactUs">Contact us</a>
@@ -33,6 +30,4 @@ It even notes all the browsers where it should work guaranteed.
 		</p>
 	</div>
 </footer>
-</link>
-</head>
 </html>
