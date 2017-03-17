@@ -7,24 +7,37 @@ redirect you to the login screen
 	<div id="youPollsTable">
 		<table style="width:50%" border="1">
 		  <tr>
-			<th>Firstname</th>
-			<th>Lastname</th> 
-			<th>Age</th>
+			<th>Name</th>
+			<th>Creation Date</th> 
+			<th>View answers</th>
+			<th>Get Link</th>
+			<th>Close Poll</th>
+			<th>Delete Poll</th>
+			
 		  </tr>
 		  <tr>
-			<td>Jill</td>
-			<td>Smith</td>
-			<td>50</td>
+			<td>Question</td>
+			<td>17/03/2017</td>
+			<td>GetLink</td>
+			<td>View Answers</td>
+			<td>Close</td>
+			<td>Delete</td>
 		  </tr>
 		  <tr>
-			<td>Eve</td>
-			<td>Jackson</td>
-			<td>94</td>
+			<td>Question</td>
+			<td>17/03/2017</td>
+			<td>GetLink</td>
+			<td>View Answers</td>
+			<td>Close</td>
+			<td>Delete</td>
 		  </tr>
 		  <tr>
-			<td>John</td>
-			<td>Doe</td>
-			<td>80</td>
+			<td>Question</td>
+			<td>17/03/2017</td>
+			<td>GetLink</td>
+			<td>View Answers</td>
+			<td>Close</td>
+			<td>Delete</td>
 		  </tr>
 		</table>
 	</div>

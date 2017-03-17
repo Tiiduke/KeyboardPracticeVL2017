@@ -22,6 +22,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	
+	<!--HOIATUS
+	SIIN OLEV SKRIPT
+	TULEB HILJEM EEMALDADA
+	JA PANNA ERALDI FAILI SISSE
+	-->
+	<script>
+	$(document).ready(function(){
+	$('#login-trigger').click(function(){
+    $(this).next('#login-content').slideToggle();
+    $(this).toggleClass('active');          
+    
+    if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
+      else $(this).find('span').html('&#x25BC;')
+    })
+});
+	</script>
+	
 	<nav class="navbar navbar-default">
 	    <div class="container-fluid">
 	
@@ -34,6 +51,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/yourPolls">Your Polls</a></li>
 					<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/account">Account</a></li>
 	            </ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li id="login">
+						<a id="login-trigger" href="#">
+							Log in 
+						</a>
+						<div id="login-content">
+							<form>
+								<fieldset id="inputs">
+									<input id="username" type="email" name="Email" placeholder="Your email address" required>   
+									<input id="password" type="password" name="Password" placeholder="Password" required>
+								</fieldset>
+								<fieldset id="actions">
+									<input type="submit" id="submit" value="Log in">
+									<label><input type="checkbox" checked="checked"> Keep me signed in</label>
+								</fieldset>
+							</form>
+						</div>                     
+					</li>
+					<li id="signup">
+						<a href="">Sign up FREE</a>
+					</li>
+				</ul>
+				
 	        </div>
 	    </div>
 	</nav>
+	
+<!--To whom it may concern, maybe the login can be implemented with AJAX, instead of going to a separate screen, 
+http://red-team-design.com/simple-and-effective-dropdown-login-box/-->
