@@ -68,6 +68,16 @@ class Welcome extends CI_Controller {
 	{} 
 
 	
+	public function signUp() //when you don't have an account, you can use the sign up button to make one
+	{
+		$title['title'] = 'Sign up';
+		$this->load->view('header', $title);
+		$this->load->view('signUp');
+		$this->load->view('footer');
+		
+		
+	}
+	
 	public function template1()
 	{
 		$title['title'] = 'template 1';
@@ -84,6 +94,8 @@ class Welcome extends CI_Controller {
 		$this->load->view('test_template2');
 		//siia saab siis lisada footer
 	}
+	
+	
 	
 	
 	

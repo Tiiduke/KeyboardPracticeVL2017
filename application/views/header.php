@@ -10,13 +10,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     if(isset($title)){
     echo "<title>" . $title . "</title>";
     } else {
-    	echo "<title>Tiitli muutuja tühi</title>";
+    	echo "<title>Tiitli muutuja tÃ¼hi</title>";
 	}
     ?>
 	
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/bootstrap.css"  type="text/css" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/footer.css"  type="text/css" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo base_url(); ?>css/login.css" type="text/css" />
 	<!-- Siia saab lisada bootstrap theme ka nt
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/navbar-theme2.css"  type="text/css" /> 
 	-->
@@ -43,38 +44,38 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    <div class="container-fluid">
 	
 	        <!--Menu Items-->
-	        <div>
-	            <ul class="nav navbar-nav">
-	            	<li><a href="" class="navbar-brand">Pollerina</a></li>
-	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/">Home</a></li>
-	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/findPolls">Find Polls</a></li>
-	                <li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/yourPolls">Your Polls</a></li>
-					<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/account">Account</a></li>
-	            </ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li id="login">
-						<a id="login-trigger" href="#">
-							Log in 
-						</a>
-						<div id="login-content">
-							<form>
-								<fieldset id="inputs">
-									<input id="username" type="email" name="Email" placeholder="Your email address" required>   
-									<input id="password" type="password" name="Password" placeholder="Password" required>
-								</fieldset>
-								<fieldset id="actions">
-									<input type="submit" id="submit" value="Log in">
-									<label><input type="checkbox" checked="checked"> Keep me signed in</label>
-								</fieldset>
-							</form>
-						</div>                     
-					</li>
-					<li id="signup">
-						<a href="">Sign up FREE</a>
-					</li>
-				</ul>
+	        
+			<ul class="nav navbar-nav">
+				<li><a href="" class="navbar-brand">Pollerina</a></li>
+				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/">Home</a></li>
+				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/findPolls">Find Polls</a></li>
+				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/yourPolls">Your Polls</a></li>
+				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/account">Account</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li id="login">
+					<a id="login-trigger" href="#">
+						Log in 
+					</a>
+					<div id="login-content">
+						<form>
+							<fieldset id="inputs">
+								<input id="username" type="email" name="Email" placeholder="Your email address" required>   
+								<input id="password" type="password" name="Password" placeholder="Password" required>
+							</fieldset>
+							<fieldset id="actions">
+								<input type="submit" id="submit" value="Log in">
+								<label><input type="checkbox" checked="checked"> Keep me signed in</label>
+							</fieldset>
+						</form>
+					</div>                     
+				</li>
+				<li id="signup">
+					<a href="<?php echo base_url(); ?>index.php/welcome/signUp">Sign up FREE</a>
+				</li>
+			</ul>
 				
-	        </div>
+	        
 	    </div>
 	</nav>
 	
