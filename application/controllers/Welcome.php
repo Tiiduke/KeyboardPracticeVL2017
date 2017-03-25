@@ -77,23 +77,7 @@ class Welcome extends CI_Controller {
 		
 		
 	}
-	
-	public function template1()
-	{
-		$title['title'] = 'template 1';
-		//$this->load->view('menu', $title);
-		//siia saab siis lisada header
-		$this->load->view('test_template1');
-		$this->load->view('footer');
-	}
-	public function template2()
-	{
-		$title['title'] = 'template 2';
-		//$this->load->view('menu', $title);
-		//siia saab siis lisada header
-		$this->load->view('test_template2');
-		//siia saab siis lisada footer
-	}
+
 	
 	
 	

@@ -22,23 +22,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/navbar-theme2.css"  type="text/css" /> 
 	-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-	
-	<!--HOIATUS
-	SIIN OLEV SKRIPT
-	TULEB HILJEM EEMALDADA
-	JA PANNA ERALDI FAILI SISSE
-	-->
-	<script>
-	$(document).ready(function(){
-	$('#login-trigger').click(function(){
-    $(this).next('#login-content').slideToggle();
-    $(this).toggleClass('active');          
-    
-    if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
-      else $(this).find('span').html('&#x25BC;')
-    })
-});
-	</script>
+	<script type="text/javascript" src="../../js/logIn.js"></script>
 	
 	<nav class="navbar navbar-default">
 	    <div class="container-fluid">
