@@ -26,12 +26,11 @@ nav #login {
 nav #login-trigger,
 nav #signup a {
   display: inline-block;
-  *display: inline;
-  *zoom: 1;
+  display: inline;
   height: 25px;
   line-height: 25px;
   font-weight: bold;
-  padding: 0 8px;
+  padding: 8px;
   text-decoration: none;
   color: #444;
   text-shadow: 0 1px 0 #fff; 
@@ -58,7 +57,7 @@ nav #login-content { /*log in nupu peale vajutades välja tulev aken*/
   right: 0;
   z-index: 999;    
   background: #fff;
-  background-image: linear-gradient(top, #fff, #eee);  
+  background-image: linear-gradient(#fff, #eee);  
   padding: 15px; /*vertical thickness*/
   box-shadow: 0 2px 2px -1px rgba(0,0,0,.9);
   border-radius: 3px 0 3px 3px; /*box corner roundness*/
@@ -96,9 +95,7 @@ nav li #login-content { /*width here deals with length*/
 
 #login #submit {    
   background-color: #1f91a5;
-  background-image: linear-gradient(top, #e97171, #d14545);
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
+  background-image: linear-gradient(#e97171, #d14545);
   border-radius: 3px;
   text-shadow: 0 1px 0 rgba(0,0,0,.5);
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
@@ -115,16 +112,12 @@ nav li #login-content { /*width here deals with length*/
 #login #submit:hover,
 #login #submit:focus {    
   background-color: #43c5dc;
-  background-image: linear-gradient(top, #d14545, #e97171);
+  background-image: linear-gradient(#d14545, #e97171);
 } 
 
 #login #submit:active {   
   outline: none;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;   
-}
-
-#login #submit::-moz-focus-inner {
-  border: none;
 }
 
 #login label { /*keep me signed in teksti asukoht*/

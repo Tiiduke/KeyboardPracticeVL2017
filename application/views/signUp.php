@@ -70,22 +70,22 @@ function test_input($data) {
 		<!--Pane tähele et siin on vale lehekülg action'i jaoks-->
 		<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
 			<label for="name">User name:</label>
-			<input type="text" name="uName" class="form-control" value="<?= isset($_POST['uName']) ? $_POST['uName'] : ''; ?>">
+			<input type="text" id="name" name="uName" class="form-control" value="<?= isset($_POST['uName']) ? $_POST['uName'] : ''; ?>">
 			<span class="error"> <?php echo $uNameErr;?></span>
 			<br>
 			<br>
 			<label for="email">Email:</label>
-			<input type="text" name="email" class="form-control" value="<?= isset($_POST['email']) ? $_POST['email'] : ''; ?>">
+			<input type="text" id="email" name="email" class="form-control" value="<?= isset($_POST['email']) ? $_POST['email'] : ''; ?>">
 			<span class="error"> <?php echo $emailErr;?></span>
 			<br>
 			<br>
 			<label for="pass">Password:</label>
-			<input type="password" name="pass" class="form-control">
+			<input type="password" id="pass" name="pass" class="form-control">
 			<span class="error"> <?php echo $passErr;?></span>
 			<br>
 			<br>
 			<label for="rPass">Repeat Password:</label>
-			<input type="password" name="rPass" class="form-control">
+			<input type="password" id="rPass" name="rPass" class="form-control">
 			<span class="error"> <?php echo $rPassErr;?></span>
 			<br>
 			<br>
