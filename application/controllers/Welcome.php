@@ -64,6 +64,13 @@ class Welcome extends CI_Controller {
 		$this->load->view('account');
 		$this->load->view('footer');
 	}
+	public function createPolls()//needs login before proper usage
+	{
+		$title['title'] = 'Create Polls';
+		$this->load->view('header', $title);
+		$this->load->view('createPolls');
+		$this->load->view('footer');
+	}
 	public function guestAdditInfo()//when making a poll as a guest
 	{} 
 

@@ -4,41 +4,30 @@ polls, that they have made. Should you not be logged in, however, it should
 redirect you to the login screen
 -->
 
-	<div id="youPollsTable">
-		<table style="width:50%" border="1">
-		  <tr>
-			<th>Name</th>
-			<th>Creation Date</th> 
-			<th>View answers</th>
-			<th>Get Link</th>
-			<th>Close Poll</th>
-			<th>Delete Poll</th>
-			
-		  </tr>
-		  <tr>
-			<td>Question</td>
-			<td>17/03/2017</td>
-			<td>GetLink</td>
-			<td>View Answers</td>
-			<td>Close</td>
-			<td>Delete</td>
-		  </tr>
-		  <tr>
-			<td>Question</td>
-			<td>17/03/2017</td>
-			<td>GetLink</td>
-			<td>View Answers</td>
-			<td>Close</td>
-			<td>Delete</td>
-		  </tr>
-		  <tr>
-			<td>Question</td>
-			<td>17/03/2017</td>
-			<td>GetLink</td>
-			<td>View Answers</td>
-			<td>Close</td>
-			<td>Delete</td>
-		  </tr>
-		</table>
-	</div>
-</body>
+<div id="yourPollsTable">
+	<?php
+		session_start();
+		include 'dbConnect.php';
+		
+		$sql = "SELECT p.pollid, p.category, q.question FROM Polltest AS p INNER JOIN Questiontest AS q WHERE p.pollid=q.pollid AND q.language='Est'";
+		$result = $conn->query($sql);
+		echo '<table class="table table-striped table-bordered table-hover">';
+		echo "<tr><th>PollID:</th><th>User:</th><th>Category:</th></tr>"; 
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+				echo "<tr><td>"; 
+				echo $row['pollid'];
+				echo "</td><td>";   
+				echo $row['category'];
+				echo "</td><td>";    
+				echo $row['question'];
+				echo "</td></tr>";  
+			}
+		} else {
+			echo "0 results";
+		}
+		echo '</table>';
+		$conn->close();
+		?>
+</div>
