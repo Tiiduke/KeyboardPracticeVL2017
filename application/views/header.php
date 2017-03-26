@@ -46,12 +46,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div id="login-content">
 						<form>
 							<fieldset id="inputs">
+								<label for="username">Username/e-mail:</label>
 								<input id="username" type="email" name="Email" placeholder="Your email address" required>   
+								<label for="password">Password:</label>
 								<input id="password" type="password" name="Password" placeholder="Password" required>
 							</fieldset>
 							<fieldset id="actions">
 								<input type="submit" id="submit" value="Log in">
-								<label><input type="checkbox" checked="checked"> Keep me signed in</label>
+								<label for="checkbox">Keep me signed in</label>
+								<input id="checkbox" type="checkbox" checked="checked">
 							</fieldset>
 						</form>
 					</div>                     

@@ -1106,7 +1106,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
-  outline: 0px auto /*-webkit-focus-ring-color*/;
+  outline: 0px auto /*-webkit-focus-ring-color*/; /*header button redius*/
   outline-offset: -2px;
 }
 figure {

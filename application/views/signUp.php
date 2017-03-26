@@ -89,7 +89,8 @@ function test_input($data) {
 			<span class="error"> <?php echo $rPassErr;?></span>
 			<br>
 			<br>
-			<input name="kasutajatingimus" value="accept" type="checkbox"> <b>I have read and agree to the *nonexistent* Terms and Conditions</b><br>
+			<input name="kasutajatingimus" id="termsCheckbox" value="accept" type="checkbox"> 
+			<label for="termsCheckbox">I have read and agree to the *nonexistent* Terms and Conditions</label>
 			<br>
 			<br>
 			<input value="Complete registration" class="btn btn-primary btn-md" type="submit">
