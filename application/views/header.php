@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script type="text/javascript" src="../../js/logIn.js"></script>
-	
+	</head>
+<body>
 	<nav class="navbar navbar-default">
 	    <div class="container-fluid">
 	
@@ -34,6 +35,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/">Home</a></li>
 				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/findPolls">Find Polls</a></li>
 				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/yourPolls">Your Polls</a></li>
+				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/createPolls">Create Polls</a></li>
 				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/account">Account</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">

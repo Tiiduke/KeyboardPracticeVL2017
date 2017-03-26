@@ -75,4 +75,3 @@ JavaScript, or PHP, whichever strikes your fancy more.
 	
 	<input type="submit" value="Search">
 </form>
-</body>

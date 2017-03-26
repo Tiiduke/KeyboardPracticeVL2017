@@ -30,4 +30,5 @@ It even notes all the browsers where it should work guaranteed.
 		</p>
 	</div>
 </footer>
+</body>
 </html>
