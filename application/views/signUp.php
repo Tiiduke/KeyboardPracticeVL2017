@@ -1,6 +1,3 @@
-<style>
-.error {color: #FF0000;}
-</style>
 <?php 
 //build up variables for showing errors in case some data is incorrect or not filled
 $uNameErr = $emailErr = $passErr = $rPassErr = "";
