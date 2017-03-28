@@ -41,7 +41,7 @@ JavaScript, or PHP, whichever strikes your fancy more.
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script type="text/javascript" src="../../js/datepick.js">
 		</script>
-		<label for="from">Filter by age: From </label>
+		Filter by age: <label for="from">From </label>
 		<input type="text" id="from" name="from">
 		<label for="to">to</label>
 		<input type="text" id="to" name="to">
@@ -49,22 +49,22 @@ JavaScript, or PHP, whichever strikes your fancy more.
 	</div>
 	
 	<div id="newOrOld">
-		<input type="radio" name="pollAge" id="newer" value="1" checked="checked">
-		<label for="newer">Search by time: Newer first</label>
+		Search by time: <input type="radio" name="pollAge" id="newer" value="1" checked="checked">
+		<label for="newer">Newer first</label>
 		<input type="radio" name="pollAge" id="older" value="2">
 		<label for="older">Older first</label>
 	</div>
 	
 	<div id="popularityFilter">
-		<input type="radio" name="pollPopularity" id="more" value="1" checked="checked">
-		<label for="more">Filter by popularity: More popular first</label>
+		Filter by popularity: <input type="radio" name="pollPopularity" id="more" value="1" checked="checked">
+		<label for="more">More popular first</label>
 		<input type="radio" name="pollPopularity" id="less" value="2">
 		<label for="less">Less popular first</label>
 	</div>
 	
 	<div id="pollActivity">
-		<input type="radio" name="pollActivity" id="active" value="1">
-		<label for="active">Poll activity: Active</label>
+		Poll activity: <input type="radio" name="pollActivity" id="active" value="1">
+		<label for="active">Active</label>
 		<input type="radio" name="pollActivity" id="closed" value="2">
 		<label for="closed">Closed</label>
 		<input type="radio" name="pollActivity" id="all" value="3" checked="checked">
