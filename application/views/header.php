@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -69,7 +70,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</nav>
 	
 	<?php 
-		session_start();
 		include 'dbConnect.php';
 		
 		ini_set('display_errors','Off');
@@ -88,6 +88,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		
 		if ($counter > 0) {
 			echo "Login successful!<br> Hello, $fname!";
+			$_SESSION["email"] = $email;
+			$_SESSION["password"] = $password;
+			$_SESSION["firstname"] = $fname;		
 		}
 		else {
 			if ($email == "" && $password == "") {
