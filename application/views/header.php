@@ -44,7 +44,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						Log in 
 					</a>
 					<div id="login-content">
-						<form>
+						<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 							<fieldset id="inputs">
 								<label for="username">Username/e-mail:</label>
 								<input id="username" type="email" name="Email" placeholder="Your email address" required>   
@@ -68,5 +68,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    </div>
 	</nav>
 	
+	<?php 
+		session_start();
+		include 'dbConnect.php';
+		
+		ini_set('display_errors','Off');
+		
+		$email = $_POST["Email"];
+		$password = $_POST["Password"];
+		
+		$loginSuccess = "SELECT COUNT( u.userid ) AS counter, u.firstname AS fname FROM Usertest AS u INNER JOIN Passwordtest AS p WHERE u.email = '$email' AND u.userid = p.userpassid AND p.password = '$password'";
+		$result1 = $conn->query($loginSuccess);
+
+		$firstname = "SELECT u.firstname AS fname FROM Usertest AS u INNER JOIN Passwordtest AS p WHERE u.email = '$email' AND u.userid = p.userpassid AND p.password = '$password'";
+		$result2 = $conn->query($loginSuccess);
+
+		$counter = $result1->fetch_assoc()['counter'];
+		$fname = $result2->fetch_assoc()['fname'];
+		
+		if ($counter > 0) {
+			echo "Login successful!<br> Hello, $fname!";
+		}
+		else {
+			if ($email == "" && $password == "") {
+				echo "Login required.";
+			}
+			else {
+				echo "Login failed!<br>";
+				echo "Email ($email) or password ($password) is wrong.";
+			}
+		}
+
+		$conn->close();
+
+	?>
 <!--To whom it may concern, maybe the login can be implemented with AJAX, instead of going to a separate screen, 
 http://red-team-design.com/simple-and-effective-dropdown-login-box/-->
