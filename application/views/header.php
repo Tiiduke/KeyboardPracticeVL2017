@@ -94,7 +94,7 @@ session_start();
 		}
 		else {
 			if ($email == "" && $password == "") {
-				echo "Login required.";
+				/*echo "Login required.";*/
 			}
 			else {
 				echo "Login failed!<br>";
@@ -104,6 +104,9 @@ session_start();
 
 		$conn->close();
 
+		if ( $_SESSION["firstname"] !== "") {
+			echo "Hello, " . $_SESSION["firstname"] . "!";
+		}
 	?>
 <!--To whom it may concern, maybe the login can be implemented with AJAX, instead of going to a separate screen, 
 http://red-team-design.com/simple-and-effective-dropdown-login-box/-->
