@@ -4,6 +4,7 @@ if(!isset($_SESSION)) {
 	session_start();
 	}
 $this->lang->load('myappl', $this->session->userdata('site_lang'));
+$_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 ?>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -102,12 +103,11 @@ $this->lang->load('myappl', $this->session->userdata('site_lang'));
 			$_SESSION["email"] = $email;
 			if ($_SESSION["language"] == 'Est'){
 				$this->session->set_userdata('site_lang', "estonian");
-				redirect(base_url());
+				header("Location: ". $_SESSION['current_page']);
 			} else {
 				$this->session->set_userdata('site_lang', "english");
-				redirect(base_url());
+				header("Location: ". $_SESSION['current_page']);
 			}
-			echo "Sisse logimine õnnestus! " . $_SESSION["language"] . "<br>";
 		} else {
 			if ($email == "" && $password == "") {
 				/*echo "Login required.";*/
@@ -115,6 +115,9 @@ $this->lang->load('myappl', $this->session->userdata('site_lang'));
 			else {
 				echo "Login failed!<br>";
 				echo "Email ($email) or password ($password) is wrong.";
+				session_unset();
+				session_start();
+				$_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 			}
 		}
 

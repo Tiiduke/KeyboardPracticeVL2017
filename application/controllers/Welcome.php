@@ -92,12 +92,13 @@ class Welcome extends CI_Controller {
 	{
 		if(!isset($_SESSION)) { 
 			session_start();
+			$_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 		}
 		if($language == "")
 			$language = "estonian";
 		
         $this->session->set_userdata('site_lang', $language);
-		redirect(base_url());
+		header("Location: ". $_SESSION['current_page']);
 	}
 
 	
