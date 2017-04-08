@@ -87,6 +87,18 @@ class Welcome extends CI_Controller {
 		
 		
 	}
+	
+	public function vahetaKeelt($language = "") //keele vahetamine
+	{
+		if(!isset($_SESSION)) { 
+			session_start();
+		}
+		if($language == "")
+			$language = "estonian";
+		
+        $this->session->set_userdata('site_lang', $language);
+		redirect(base_url());
+	}
 
 	
 	

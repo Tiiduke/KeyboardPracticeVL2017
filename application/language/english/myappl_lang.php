@@ -10,7 +10,7 @@ $lang['Account'] = 'Account';
 $lang['Login'] = 'Log in';
 $lang['SignUp'] = 'Sign up';
 $lang['UE'] = 'Username/e-mail';
-$lang['UEIn'] = 'Your Username/email address';
+$lang['UEIn'] = 'Username/e-mail';
 $lang['Par'] = 'Password:';
 $lang['ParIn'] = 'Password';
 $lang['LogIn'] = 'Log in';
@@ -54,7 +54,7 @@ $lang['SearchSearch'] = 'Search';
 $lang['CrNewPoll'] = 'Create a new poll';
 $lang['CrQuest'] = 'Question:';
 $lang['CrInfo'] = 'Enter options for possible answers (up to 5):';
-$lang['CrAns'] = 'Answer option';
+$lang['CrAns'] = 'Answer option ';
 $lang['argus'] = 'Submit';
 
 $lang['CrErr1'] = 'Question cannot be blank!';

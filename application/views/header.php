@@ -9,7 +9,6 @@ $this->lang->load('myappl', $this->session->userdata('site_lang'));
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8">
-	
 	<?php 
     if(isset($title)){
     echo "<title>" . $title . "</title>";
@@ -22,6 +21,7 @@ $this->lang->load('myappl', $this->session->userdata('site_lang'));
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/footer.css"  type="text/css" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo base_url(); ?>css/login.css" type="text/css" />
+	<link rel="stylesheet" href="<?php echo base_url(); ?>css/headerImg.css" type="text/css" />
 	<!-- Siia saab lisada bootstrap theme ka nt
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/navbar-theme2.css"  type="text/css" /> 
 	-->
@@ -43,6 +43,9 @@ $this->lang->load('myappl', $this->session->userdata('site_lang'));
 				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/account"><?php echo lang("Account"); ?></a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+				<li><a href="<?php echo base_url(); ?>index.php/welcome/vahetaKeelt/estonian"><img class="img" alt="estonian flag" src="<?php echo base_url(); ?>images/est.png"/></a></li>
+				<li><a href="<?php echo base_url(); ?>index.php/welcome/vahetaKeelt/english"><img class="img" alt="union jack" src="<?php echo base_url(); ?>images/gb.png"/></a></li>
+				
 				<li id="login">
 					<a id="login-trigger" href="#">
 						<?php echo lang("Login"); ?>
