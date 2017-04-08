@@ -76,7 +76,7 @@ $this->lang->load('myappl', $this->session->userdata('site_lang'));
 	    </div>
 	</nav>
 	
-	<?php /*
+	<?php 
 		include 'dbConnect.php';
 		
 		ini_set('display_errors','Off');
@@ -101,7 +101,7 @@ $this->lang->load('myappl', $this->session->userdata('site_lang'));
 		}
 		else {
 			if ($email == "" && $password == "") {
-				/*echo "Login required.";
+				/*echo "Login required.";*/
 			}
 			else {
 				echo "Login failed!<br>";
@@ -113,7 +113,7 @@ $this->lang->load('myappl', $this->session->userdata('site_lang'));
 
 		if ( $_SESSION["firstname"] !== "") {
 			echo "Hello, " . $_SESSION["firstname"] . "!";
-		}*/
+		}
 	?>
 <!--To whom it may concern, maybe the login can be implemented with AJAX, instead of going to a separate screen, 
 http://red-team-design.com/simple-and-effective-dropdown-login-box/-->
