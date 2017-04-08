@@ -84,22 +84,31 @@ $this->lang->load('myappl', $this->session->userdata('site_lang'));
 		$email = $_POST["Email"];
 		$password = $_POST["Password"];
 		
-		$loginSuccess = "SELECT COUNT( u.userid ) AS counter, u.firstname AS fname FROM Usertest AS u INNER JOIN Passwordtest AS p WHERE u.email = '$email' AND u.userid = p.userpassid AND p.password = '$password'";
-		$result1 = $conn->query($loginSuccess);
-
-		$firstname = "SELECT u.firstname AS fname FROM Usertest AS u INNER JOIN Passwordtest AS p WHERE u.email = '$email' AND u.userid = p.userpassid AND p.password = '$password'";
-		$result2 = $conn->query($loginSuccess);
-
-		$counter = $result1->fetch_assoc()['counter'];
-		$fname = $result2->fetch_assoc()['fname'];
-		
-		if ($counter > 0) {
-			echo "Login successful!<br> Hello, $fname!";
-			$_SESSION["email"] = $email;
+		/* Collecting user data from database to be used during the session */
+		$userdata = "SELECT u.userid, u.firstname, u.lastname, u.sex, u.birthdate, u.language, u.fb FROM Usertest AS u INNER JOIN Passwordtest AS p WHERE u.email = '$email' AND u.userid = p.userpassid AND p.password = '$password'";
+		$result = $conn->query($userdata);
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+				$_SESSION["userid"] = $row['userid'];
+				$_SESSION["firstname"] = $row['firstname'];
+				$_SESSION["lastname"] = $row['lastname'];
+				$_SESSION["sex"] = $row['sex'];
+				$_SESSION["birthdate"] = $row['birthdate'];
+				$_SESSION["language"] = $row['language'];
+				$_SESSION["fb"] = $row['fb'];
+			}
 			$_SESSION["password"] = $password;
-			$_SESSION["firstname"] = $fname;		
-		}
-		else {
+			$_SESSION["email"] = $email;
+			if ($_SESSION["language"] == 'Est'){
+				$this->session->set_userdata('site_lang', "estonian");
+				redirect(base_url());
+			} else {
+				$this->session->set_userdata('site_lang', "english");
+				redirect(base_url());
+			}
+			echo "Sisse logimine õnnestus! " . $_SESSION["language"] . "<br>";
+		} else {
 			if ($email == "" && $password == "") {
 				/*echo "Login required.";*/
 			}
@@ -111,7 +120,7 @@ $this->lang->load('myappl', $this->session->userdata('site_lang'));
 
 		$conn->close();
 
-		if ( $_SESSION["firstname"] !== "") {
+		if (isset($_SESSION["firstname"])) {
 			echo "Hello, " . $_SESSION["firstname"] . "!";
 		}
 	?>
