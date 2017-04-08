@@ -1,9 +1,9 @@
 <div id="container">
-	<h1>Contact us:</h1>
+	<h1><?php echo lang("Contact"); ?>:</h1>
 	Pollerina<br>
 	Liivi 2<br>
 	50409 Tartu<br>
-	ESTONIA<br>
+	<?php echo lang("Country"); ?><br>
 	<p>E-mail: <a href="mailto:pollerina.ut@gmail.com">pollerina.ut@gmail.com</a></p>
 		
 	<div id="googleMap1" style="width:400px;height:300px;"></div>

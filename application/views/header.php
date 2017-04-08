@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-session_start();
+if(!isset($_SESSION)) { 
+	session_start();
+	}
+$this->lang->load('myappl', $this->session->userdata('site_lang'));
 ?>
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -33,35 +36,36 @@ session_start();
 	        
 			<ul class="nav navbar-nav">
 				<li><a href="" class="navbar-brand">Pollerina</a></li>
-				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/">Home</a></li>
-				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/findPolls">Find Polls</a></li>
-				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/yourPolls">Your Polls</a></li>
-				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/createPolls">Create Polls</a></li>
-				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/account">Account</a></li>
+				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/"><?php echo lang("menu_mainpage"); ?></a></li>
+				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/findPolls"><?php echo lang("menu_mainFP"); ?></a></li>
+				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/yourPolls"><?php echo lang("menu_mainYP"); ?></a></li>
+				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/createPolls"><?php echo lang("menu_mainCP"); ?></a></li>
+				<li class="all"><a href="<?php echo base_url(); ?>index.php/welcome/account"><?php echo lang("Account"); ?></a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li id="login">
 					<a id="login-trigger" href="#">
-						Log in 
+						<?php echo lang("Login"); ?>
 					</a>
 					<div id="login-content">
 						<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 							<fieldset id="inputs">
-								<label for="username">Username/e-mail:</label>
-								<input id="username" type="email" name="Email" placeholder="Your email address" required>   
-								<label for="password">Password:</label>
-								<input id="password" type="password" name="Password" placeholder="Password" required>
+								<label for="username"><?php echo lang("UE"); ?></label>
+								<input id="username" type="email" name="Email" placeholder=<?php echo lang("UEIn"); ?> required>   
+								<label for="password"><?php echo lang("Par"); ?></label>
+								<input id="password" type="password" name="Password" placeholder=<?php echo lang("ParIn"); ?> required>
 							</fieldset>
 							<fieldset id="actions">
 								<input type="submit" id="submit" value="Log in">
-								<label for="checkbox">Keep me signed in</label>
+								<label for="checkbox"><?php echo lang("keepLog"); ?></label>
 								<input id="checkbox" type="checkbox" checked="checked">
 							</fieldset>
 						</form>
 					</div>                     
 				</li>
 				<li id="signup">
-					<a href="<?php echo base_url(); ?>index.php/welcome/signUp">Sign up FREE</a>
+					<a href="<?php echo base_url(); ?>index.php/welcome/signUp"><?php echo lang("SignUp"); ?></a>
+					
 				</li>
 			</ul>
 				
@@ -69,7 +73,7 @@ session_start();
 	    </div>
 	</nav>
 	
-	<?php 
+	<?php /*
 		include 'dbConnect.php';
 		
 		ini_set('display_errors','Off');
@@ -94,7 +98,7 @@ session_start();
 		}
 		else {
 			if ($email == "" && $password == "") {
-				/*echo "Login required.";*/
+				/*echo "Login required.";
 			}
 			else {
 				echo "Login failed!<br>";
@@ -106,7 +110,7 @@ session_start();
 
 		if ( $_SESSION["firstname"] !== "") {
 			echo "Hello, " . $_SESSION["firstname"] . "!";
-		}
+		}*/
 	?>
 <!--To whom it may concern, maybe the login can be implemented with AJAX, instead of going to a separate screen, 
 http://red-team-design.com/simple-and-effective-dropdown-login-box/-->
