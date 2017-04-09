@@ -10,6 +10,9 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8">
+	<meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="253143165319-8ghrtm4aikjrhvd51oev2fl2of6pi7vl.apps.googleusercontent.com">
+
 	<?php 
     if(isset($title)){
     echo "<title>" . $title . "</title>";
@@ -28,6 +31,8 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 	-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script type="text/javascript" src="../../js/logIn.js"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+
 	</head>
 <body>
 	<nav class="navbar navbar-default">
@@ -71,6 +76,33 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 					<a href="<?php echo base_url(); ?>index.php/welcome/signUp"><?php echo lang("SignUp"); ?></a>
 					
 				</li>
+				<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+				<script>
+				function onSignIn(googleUser) {
+					// Useful data for your client-side scripts:
+					var profile = googleUser.getBasicProfile();
+					console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+					console.log('Full Name: ' + profile.getName());
+					console.log('Given Name: ' + profile.getGivenName());
+					console.log('Family Name: ' + profile.getFamilyName());
+					console.log("Image URL: " + profile.getImageUrl());
+					console.log("Email: " + profile.getEmail());
+
+					// The ID token you need to pass to your backend:
+					var id_token = googleUser.getAuthResponse().id_token;
+					console.log("ID Token: " + id_token);
+				  };
+				</script>
+				<a href="#" onclick="signOut();">Sign out</a>
+					<script>
+					  function signOut() {
+						var auth2 = gapi.auth2.getAuthInstance();
+						auth2.signOut().then(function () {
+						  console.log('User signed out.');
+						});
+					  }
+					</script>
+
 			</ul>
 				
 	        
