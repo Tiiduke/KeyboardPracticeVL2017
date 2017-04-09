@@ -58,6 +58,10 @@ $lang['Category2'] = 'Religioon';
 
 
 //Your Polls
+$lang['YourPollsIntro'] = 'Allpool on kuvatud sinu loodud pollid:';
+$lang['YourPollsNone'] = "Sa ei ole loonud veel ühtegi polli.";
+$lang['YourPollsLogin'] = "Pollide vaatamiseks pead olema sisse logitud.";
+
 
 //Create Polls
 $lang['CrNewPoll'] = 'Loo uus poll';

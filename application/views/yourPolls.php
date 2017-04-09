@@ -6,28 +6,40 @@ redirect you to the login screen
 
 <div id="yourPollsTable">
 	<?php
-		session_start();
+		$email = $_SESSION['email'];
+		if(!isset($_SESSION)) { 
+			session_start();
+		}
 		include 'dbConnect.php';
 		
-		$sql = "SELECT p.pollid, p.category, q.question FROM Polltest AS p INNER JOIN Questiontest AS q WHERE p.pollid=q.pollid AND q.language='Est'";
-		$result = $conn->query($sql);
-		echo '<table class="table table-striped table-bordered table-hover">';
-		echo "<tr><th>PollID:</th><th>User:</th><th>Category:</th></tr>"; 
-		if ($result->num_rows > 0) {
-			// output data of each row
-			while($row = $result->fetch_assoc()) {
-				echo "<tr><td>"; 
-				echo $row['pollid'];
-				echo "</td><td>";   
-				echo $row['category'];
-				echo "</td><td>";    
-				echo $row['question'];
-				echo "</td></tr>";  
-			}
+		if ($email == "") {
+			echo lang("YourPollsLogin");
 		} else {
-			echo "0 results";
+			$sql = "SELECT Polltest.PollID, Usertest.Email, Polltest.Category, Questiontest.Question, Answerstest.Answer FROM Usertest INNER JOIN ((Polltest INNER JOIN Answerstest ON Polltest.PollID = Answerstest.PollID) INNER JOIN Questiontest ON Polltest.PollID = Questiontest.PollID) ON Usertest.UserID = Polltest.UserID WHERE Usertest.Email = '$email' AND Usertest.Language = Questiontest.Language";
+			$result = $conn->query($sql);
+			echo '<table class="table table-striped table-bordered table-hover">';
+			echo "<tr><th>PollID:</th><th>Author:</th><th>Category:</th><th>Question:</th><th>Answer:</th></tr>"; 
+			if ($result->num_rows > 0) {
+				echo lang("YourPollsIntro");
+				// output data of each row
+				while($row = $result->fetch_assoc()) {
+					echo "<tr><td>"; 
+					echo $row['PollID'];
+					echo "</td><td>";   
+					echo $row['Email'];
+					echo "</td><td>";    
+					echo $row['Category'];
+					echo "</td><td>";    
+					echo $row['Question'];
+					echo "</td><td>";    
+					echo $row['Answer'];
+					echo "</td></tr>";  
+				}
+			} elseif ($result->num_rows == 0){
+				echo lang("YourPollsNone");
+			}
+			echo '</table>';
+			$conn->close();
 		}
-		echo '</table>';
-		$conn->close();
 		?>
 </div>

@@ -22,30 +22,38 @@ class Welcome extends CI_Controller {
 	 
 	public function index() //homepage
 	{
-		
+		if(!isset($_SESSION)) { 
+			session_start();
+		}		
 		$title['title'] = 'Home';
 		$this->load->view('header', $title);
 		$this->load->view('welcome_message');
 		$this->load->view('footer');
 	}
 	
-	public function about()
-	{
-		$title['title'] = 'About';
+	public function about()	{
+		if(!isset($_SESSION)) { 
+			session_start();
+		}
+		$title['title'] = 'About'; //lang('About'); //Does not work for some reason
 		$this->load->view('header', $title);
 		$this->load->view('about');
 		$this->load->view('footer');
 		
 	}
-	public function contactUs()
-	{
-		$title['title'] = 'Contact Us';
+	public function contactUs() {
+		if(!isset($_SESSION)) { 
+			session_start();
+		}		
+		$title['title'] = 'Contact Us';// lang('Contact'); //Does not work for some reason
 		$this->load->view('header', $title);
 		$this->load->view('contactUs');
 		$this->load->view('footer');
 	}
-	public function findPolls()
-	{
+	public function findPolls()	{
+		if(!isset($_SESSION)) { 
+			session_start();
+		}		
 		$title['title'] = 'Find Polls';
 		$this->load->view('header', $title);
 		$this->load->view('findPolls');
@@ -55,6 +63,9 @@ class Welcome extends CI_Controller {
 	{}
 	public function yourPolls() //probably needs to be logged in as well
 	{
+		if(!isset($_SESSION)) { 
+			session_start();
+		}		
 		$title['title'] = 'Your Polls';
 		$this->load->view('header', $title);
 		$this->load->view('yourPolls');
@@ -62,6 +73,9 @@ class Welcome extends CI_Controller {
 	}
 	public function account()//needs login before proper usage
 	{
+		if(!isset($_SESSION)) { 
+			session_start();
+		}		
 		$title['title'] = 'Account';
 		$this->load->view('header', $title);
 		$this->load->view('account');
@@ -69,6 +83,9 @@ class Welcome extends CI_Controller {
 	}
 	public function createPolls()//needs login before proper usage
 	{
+		if(!isset($_SESSION)) { 
+			session_start();
+		}		
 		$title['title'] = 'Create Polls';
 		$this->load->view('header', $title);
 		$this->load->view('createPolls');
@@ -80,6 +97,9 @@ class Welcome extends CI_Controller {
 	
 	public function signUp() //when you don't have an account, you can use the sign up button to make one
 	{
+		if(!isset($_SESSION)) { 
+			session_start();
+		}		
 		$title['title'] = 'Sign up';
 		$this->load->view('header', $title);
 		$this->load->view('signUp');

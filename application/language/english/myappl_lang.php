@@ -58,6 +58,10 @@ $lang['Category2'] = 'Religion';
 
 
 //Your Polls
+$lang['YourPollsIntro'] = 'Below are the polls you have created:';
+$lang['YourPollsNone'] = "You haven't created any polls yet.";
+$lang['YourPollsLogin'] = "You need to be logged in to view your polls.";
+
 
 //Create Polls
 $lang['CrNewPoll'] = 'Create a new poll';
