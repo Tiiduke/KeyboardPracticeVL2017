@@ -1,3 +1,4 @@
+<br>
 <footer class="bs-docs-footer">
 	<div class="container-fluid">
 	    <p class="text-center">
