@@ -20,17 +20,8 @@ JavaScript, or PHP, whichever strikes your fancy more.
 	<div id="catType">
 		<label for="category"><?php echo lang("SearchCate"); ?></label> 
 		<select id="category">
-		<option value="volvo">My favourite car</option>
-		<option value="saab">Saab</option>
-		<option value="opel">Opel</option>
-		<option value="audi">Audi</option>
-		</select>
-		<label for="type"><?php echo lang("SearchType"); ?></label> 
-		<select id="type">
-		<option value="volvo">Volvo</option>
-		<option value="saab">Saab</option>
-		<option value="opel">Opel</option>
-		<option value="audi">length</option>
+		<option value="cat1"><?php echo lang("Category1"); ?></option>
+		<option value="cat2"><?php echo lang("Category2"); ?></option>
 		</select>
 	</div>
 	

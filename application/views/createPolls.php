@@ -31,17 +31,18 @@ function test_input($data) {
 <div class="container text-left">
     <!-- before ja after hoiavad javascripti jaoks andmeid?::before-->
 	<div class="col-sm-10">
-		<h2><?php echo lang("CrNewPoll"); ?></h2>
-		<div id="lang">
-			<label for="questLang"><?php echo lang("QuestLang"); ?></label> 
-			<select id="questLang">
-			<option value="Eng"><?php echo lang("English"); ?></option>
-			<option value="Est"><?php echo lang("Estonian"); ?></option>
-			</select>
-		</div>
-		<div class="valError"></div>
-		<!--Pane tähele et siin on vale lehekülg action'i jaoks-->
 		<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+		<fieldset>
+		<legend><?php echo lang("CrNewPoll"); ?></legend>
+			<div id="lang">
+				<label for="questLang"><?php echo lang("QuestLang"); ?></label> 
+				<select id="questLang">
+				<option value="Eng"><?php echo lang("English"); ?></option>
+				<option value="Est"><?php echo lang("Estonian"); ?></option>
+				</select>
+			</div>
+			<div class="valError"></div>
+			<br>
 			<label for="question"><?php echo lang("CrQuest"); ?></label>
 			<input type="text" id="question" name="question" class="form-control" value="<?= isset($_POST['question']) ? $_POST['question'] : ''; ?>">
 			<span class="error"> <?php echo $questionErr;?></span>
@@ -49,7 +50,7 @@ function test_input($data) {
 			<h3><?php echo lang("CrInfo"); ?></h3>
 			<br>
 			<label for="option1"><?php echo lang("CrAns"); ?>1:</label>
-			<input type="text" id="option2" name="option1" class="form-control" value="<?= isset($_POST['option1']) ? $_POST['option1'] : ''; ?>">
+			<input type="text" id="option1" name="option1" class="form-control" value="<?= isset($_POST['option1']) ? $_POST['option1'] : ''; ?>">
 			<span class="error"> <?php echo $option1err;?></span>
 			<br>
 			<label for="option2"><?php echo lang("CrAns"); ?>2:</label>
@@ -68,7 +69,9 @@ function test_input($data) {
 			<input type="text" id="option5" name="option5" class="form-control" value="<?= isset($_POST['option5']) ? $_POST['option5'] : ''; ?>">
 			<span class="error"> <?php echo $option5err;?></span>
 			<br>
-			<input value=<?php echo lang("Create"); ?> class="btn btn-primary btn-md" type="Submit">
+			</fieldset>
+
+			<input value=<?php echo lang("Create"); ?> class="btn btn-primary btn-md" type="submit">
 		</form>   
 	</div>
 	<!--::after-->  
