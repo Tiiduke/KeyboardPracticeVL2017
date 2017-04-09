@@ -76,11 +76,14 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 					<a href="<?php echo base_url(); ?>index.php/welcome/signUp"><?php echo lang("SignUp"); ?></a>
 					
 				</li>
-				<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+<!-- Google login, currently not working
+			<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 				<script>
 				function onSignIn(googleUser) {
 					// Useful data for your client-side scripts:
 					var profile = googleUser.getBasicProfile();
+
+					
 					console.log("ID: " + profile.getId()); // Don't send this directly to your server!
 					console.log('Full Name: ' + profile.getName());
 					console.log('Given Name: ' + profile.getGivenName());
@@ -94,19 +97,17 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 				  };
 				</script>
 				<a href="#" onclick="signOut();">Sign out</a>
-					<script>
-					  function signOut() {
+				<script>
+					function signOut() {
 						var auth2 = gapi.auth2.getAuthInstance();
 						auth2.signOut().then(function () {
 						  console.log('User signed out.');
 						});
-					  }
-					</script>
-
-			</ul>
-				
-	        
-	    </div>
+					}
+				</script>
+-->
+				</ul>
+			</div>
 	</nav>
 	
 	<?php 
