@@ -52,10 +52,11 @@ $lang['SearchSearch'] = 'Search';
 
 //Create Polls
 $lang['CrNewPoll'] = 'Create a new poll';
+$lang['QuestLang'] = 'Question language:';
 $lang['CrQuest'] = 'Question:';
 $lang['CrInfo'] = 'Enter options for possible answers (up to 5):';
 $lang['CrAns'] = 'Answer option ';
-$lang['argus'] = 'Submit';
+$lang['Create'] = 'Create';
 
 $lang['CrErr1'] = 'Question cannot be blank!';
 $lang['CrErr2'] = 'At least 2 answer options required!';
@@ -67,10 +68,20 @@ $lang['CrErr3'] = 'Answer options cannot be identical!';
 //Sign Up
 $lang['RegHeader'] = 'Pollerina user registration';
 $lang['RegUser'] = 'User name:';
+$lang['RegFirstname'] = 'First name:';
+$lang['RegLastname'] = 'Last name:';
 $lang['RegUserErr'] = 'A name is required';
+$lang['RegGender'] = 'Gender:';
+$lang['RegMale'] = 'Male';
+$lang['RegFemale'] = 'Female';
+$lang['RegBirthdate'] = 'Birthdate (yyyy-mm-dd):';
+$lang['RegBirthdateErr'] = 'Birthdate is required';
+$lang['RegLanguage'] = 'Language:';
 $lang['RegEmail'] = 'Email:';
+$lang['RegEmailTooltip'] = 'The e-mail address used for registration will be used as the username for logging in';
 $lang['RegEmailErr'] = 'An email is required';
 $lang['RegPass'] = 'Password:';
+$lang['RegPassTooltip'] = 'Password must be at least 8 characters in length, contain numbers as well as small and capital letters';
 $lang['RegPassErr'] = 'A password is required';
 $lang['RegRepPass'] = 'Repeat Password:';
 $lang['RegRepPassErr'] = 'You need to reenter your password as well';
@@ -80,3 +91,7 @@ $lang['RegComplete'] = 'Finish';
 
 //Contact us
 $lang['Country'] = 'ESTONIA';
+
+//Languages
+$lang['English'] = 'English';
+$lang['Estonian'] = 'Estonian';

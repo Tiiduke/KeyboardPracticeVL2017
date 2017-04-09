@@ -51,10 +51,11 @@ $lang['SearchSearch'] = 'Otsi';
 
 //Create Polls
 $lang['CrNewPoll'] = 'Loo uus poll';
+$lang['QuestLang'] = 'Küsimuse keel:';
 $lang['CrQuest'] = 'Küsimus:';
 $lang['CrInfo'] = 'Sisesta võimalikud vastused (kuni 5):';
 $lang['CrAns'] = 'Vastusevalik ';
-$lang['argus'] = 'Otsi';
+$lang['Create'] = 'Loo';
 
 $lang['CrErr1'] = 'Küsimus ei saa olla tühi!';
 $lang['CrErr2'] = 'Vähemalt 2 vastusevalikut on vaja!';
@@ -65,10 +66,20 @@ $lang['CrErr3'] = 'Vastusevalikud ei saa olla samad!';
 //Sign Up
 $lang['RegHeader'] = 'Pollerina kasutaja registreerimine';
 $lang['RegUser'] = 'Kasutajanimi:';
+$lang['RegFirstname'] = 'Eesnimi:';
+$lang['RegLastname'] = 'Perekonnanimi:';
 $lang['RegUserErr'] = 'Kasutajanimi on vaja lisada';
-$lang['RegEmail'] = 'Email:';
-$lang['RegEmailErr'] = 'Email on vaja lisada';
+$lang['RegGender'] = 'Sugu:';
+$lang['RegMale'] = 'Mees';
+$lang['RegFemale'] = 'Naine';
+$lang['RegBirthdate'] = 'Sünniaeg (aaaa-kk-pp):';
+$lang['RegBirthdateErr'] = 'Sünniaeg on vaja lisada';
+$lang['RegLanguage'] = 'Keel:';
+$lang['RegEmail'] = 'Meiliaadress:';
+$lang['RegEmailTooltip'] = 'Registreerimisel kasutatud meiliaadressi kasutatakse edaspidi kasutajanimena sisselogimisel';
+$lang['RegEmailErr'] = 'Meiliaadress on vaja lisada';
 $lang['RegPass'] = 'Parool:';
+$lang['RegPassTooltip'] = 'Parool peab olema vähemalt 8 tähemärki pikk, sisaldama numbreid ning suuri ja väikseid tähti';
 $lang['RegPassErr'] = 'Parool on vaja lisada';
 $lang['RegRepPass'] = 'Korda parooli:';
 $lang['RegRepPassErr'] = 'Sa pead parooli ka siin uuesti lisama';
@@ -79,4 +90,6 @@ $lang['RegComplete'] = 'Registreeri';
 //Contact us
 $lang['Country'] = 'EESTI';
 
-
+//Languages
+$lang['English'] = 'inglise';
+$lang['Estonian'] = 'eesti';
