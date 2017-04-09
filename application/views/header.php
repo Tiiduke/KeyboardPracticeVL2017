@@ -156,9 +156,6 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 
 		$conn->close();
 
-		if (isset($_SESSION["firstname"])) {
-			echo "Hello, " . $_SESSION["firstname"] . "!";
-		}
 	?>
 <!--To whom it may concern, maybe the login can be implemented with AJAX, instead of going to a separate screen, 
 http://red-team-design.com/simple-and-effective-dropdown-login-box/-->

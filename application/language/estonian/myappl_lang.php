@@ -18,11 +18,18 @@ $lang['keepLog'] = 'Hoia sisse logituna';
 
 
 //Footer
-$lang['About'] = 'Meie kohta';
+$lang['About'] = 'Meist';
 $lang['Contact'] = 'Kontaktandmed';
 
 
+//About
+$lang['AboutText'] = 'Pollerina on pollimiskeskkond, mis on loodud Tartu Ülikooli aine Veebirakenduste loomine raames 2017. aasta kevade jooksul.';
+
 //Home
+$lang['WelcomeToPollerina'] = 'Tere tulemast kasutama teenust Pollerina!';
+$lang['WelcomeText1'] = 'Pollerina võimaldab luua küsitlusi, millele vastab terve maailm!';
+$lang['WelcomeText2'] = 'Registreeri kasutajaks juba täna!';
+
 
 //Find Polls
 $lang['SearchT'] = 'Polli otsing';
@@ -62,6 +69,9 @@ $lang['CrErr2'] = 'Vähemalt 2 vastusevalikut on vaja!';
 $lang['CrErr3'] = 'Vastusevalikud ei saa olla samad!';
 
 //Account
+$lang['Hello'] = 'Tere';
+$lang['NotLoggedIn'] = 'Kasutaja andmete nägemiseks peate olema sisse logitud.';
+
 
 //Sign Up
 $lang['RegHeader'] = 'Pollerina kasutaja registreerimine';

@@ -22,7 +22,14 @@ $lang['About'] = 'About';
 $lang['Contact'] = 'Contact us';
 
 
+//About
+$lang['AboutText'] = 'This is a poll environment created for the WebApp Development course of the University of Tartu, through the spring of 2017.';
+
 //Home
+$lang['WelcomeToPollerina'] = 'Welcome to Pollerina!';
+$lang['WelcomeText1'] = 'Pollerina is a great way to ask questions that the whole world can answer!';
+$lang['WelcomeText2'] = 'Register to become a user today!';
+
 
 //Find Polls
 $lang['SearchT'] = 'Poll search';
@@ -64,6 +71,9 @@ $lang['CrErr3'] = 'Answer options cannot be identical!';
 
 
 //Account
+$lang['Hello'] = 'Hello';
+$lang['NotLoggedIn'] = 'You need to be logged in to view account data.';
+
 
 //Sign Up
 $lang['RegHeader'] = 'Pollerina user registration';
