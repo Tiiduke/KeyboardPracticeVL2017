@@ -15,6 +15,7 @@ $lang['Par'] = 'Password:';
 $lang['ParIn'] = 'Password';
 $lang['LogIn'] = 'Log in';
 $lang['keepLog'] = 'Keep me signed in';
+$lang['LogOut'] = 'Exit';
 
 
 //Footer

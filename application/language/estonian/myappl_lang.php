@@ -15,6 +15,7 @@ $lang['Par'] = 'Parool:';
 $lang['ParIn'] = 'Parool';
 $lang['LogIn'] = 'Logi sisse';
 $lang['keepLog'] = 'Hoia sisse logituna';
+$lang['LogOut'] = 'Välju';
 
 
 //Footer

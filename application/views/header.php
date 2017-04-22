@@ -51,66 +51,59 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="<?php echo base_url(); ?>index.php/welcome/vahetaKeelt/estonian"><img class="img" alt="estonian flag" src="<?php echo base_url(); ?>images/est.png"/></a></li>
 				<li><a href="<?php echo base_url(); ?>index.php/welcome/vahetaKeelt/english"><img class="img" alt="union jack" src="<?php echo base_url(); ?>images/gb.png"/></a></li>
-				
-				<li id="login">
-					<a id="login-trigger" href="#">
-						<?php echo lang("Login"); ?>
-					</a>
-					<div id="login-content">
-						<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-							<fieldset id="inputs">
-								<label for="username"><?php echo lang("UE"); ?></label>
-								<input id="username" type="email" name="Email" placeholder=<?php echo lang("UEIn"); ?> required>   
-								<label for="password"><?php echo lang("Par"); ?></label>
-								<input id="password" type="password" name="Password" placeholder=<?php echo lang("ParIn"); ?> required>
-							</fieldset>
-							<fieldset id="actions">
-								<input type="submit" id="submit" value="Log in">
-								<label for="checkbox"><?php echo lang("keepLog"); ?></label>
-								<input id="checkbox" type="checkbox" checked="checked">
-							</fieldset>
-						</form>
-					</div>                     
-				</li>
-				<li id="signup">
-					<a href="<?php echo base_url(); ?>index.php/welcome/signUp"><?php echo lang("SignUp"); ?></a>
-					
-				</li>
-<!-- Google login, currently not working
-			<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
-				<script>
-				function onSignIn(googleUser) {
-					// Useful data for your client-side scripts:
-					var profile = googleUser.getBasicProfile();
-
-					
-					console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-					console.log('Full Name: ' + profile.getName());
-					console.log('Given Name: ' + profile.getGivenName());
-					console.log('Family Name: ' + profile.getFamilyName());
-					console.log("Image URL: " + profile.getImageUrl());
-					console.log("Email: " + profile.getEmail());
-
-					// The ID token you need to pass to your backend:
-					var id_token = googleUser.getAuthResponse().id_token;
-					console.log("ID Token: " + id_token);
-				  };
-				</script>
-				<a href="#" onclick="signOut();">Sign out</a>
-				<script>
-					function signOut() {
-						var auth2 = gapi.auth2.getAuthInstance();
-						auth2.signOut().then(function () {
-						  console.log('User signed out.');
-						});
+				<?php
+					if (!isset($_SESSION["firstname"])) {
+						echo '<li id="login">';
+						echo '<a id="login-trigger" href="#">';
+							echo lang("Login");
+							
+						echo '</a>';
+						echo '<div id="login-content">';
+							echo '<form action="' . htmlspecialchars($_SERVER["PHP_SELF"]) . '" method="post">';
+								echo '<fieldset id="inputs">';
+									echo '<label for="username">' . lang("UE") . '</label>';
+									echo '<input id="username" type="email" name="Email" placeholder=' . lang("UEIn") . ' required> ';  
+									echo '<label for="password">' . lang("Par") . '</label>';
+									echo '<input id="password" type="password" name="Password" placeholder=' . lang("ParIn") . ' required>';
+								echo '</fieldset>';
+								echo '<fieldset id="actions">';
+									echo '<input type="submit" id="submit" value="Log in">';
+									echo '<label for="checkbox">' . lang("keepLog") . '</label>';
+									echo '<input id="checkbox" type="checkbox" checked="checked">';
+								echo '</fieldset>';
+							echo '</form>';
+						echo '</div>';                     
+					echo '</li>';
+					echo '<li id="signup">';
+						echo '<a href="'. base_url() . 'index.php/welcome/signUp">'. lang("SignUp") . '</a>';
 					}
-				</script>
--->
+					if (isset($_SESSION["firstname"])) {
+						echo '<li id="logout">';
+						echo '<input type="submit" id="submit" value=' . lang("LogOut") . '>';
+						//echo '<a id="login-trigger" href="#">';
+							//echo lang("LogOut");
+						echo '</a>';
+						
+					}
+				?>
+				
+
+				</li>
 				</ul>
 			</div>
 	</nav>
 	
-	<?php 
+	<?php
+		/*		SOMETHING LIKE THIS NEEDS TO BE IMPLEMENTED SOMEWHERE TO LOG OUT				
+		//log out code
+						if (isset($_POST['logout'])) {
+							session_unset();
+							session_start();
+						}
+		*/
+	
+	
+	
 		include 'dbConnect.php';
 		
 		ini_set('display_errors','Off');
@@ -142,6 +135,7 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 				header("Location: ". $_SESSION['current_page']);
 			}
 		} else {
+			
 			if ($email == "" && $password == "") {
 				/*echo "Login required.";*/
 			}
