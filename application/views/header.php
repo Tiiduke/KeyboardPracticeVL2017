@@ -79,7 +79,7 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 					}
 					if (isset($_SESSION["firstname"])) {
 						echo '<li id="logout">';
-						echo '<input type="submit" id="submit" value=' . lang("LogOut") . '>';
+						echo '<input type="submit" id="logout" value=' . lang("LogOut") . '>';
 						//echo '<a id="login-trigger" href="#">';
 							//echo lang("LogOut");
 						echo '</a>';
@@ -101,9 +101,6 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 							session_start();
 						}
 		*/
-	
-	
-	
 		include 'dbConnect.php';
 		
 		ini_set('display_errors','Off');
