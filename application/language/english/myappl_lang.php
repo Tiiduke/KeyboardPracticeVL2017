@@ -30,7 +30,8 @@ $lang['AboutText'] = 'This is a poll environment created for the WebApp Developm
 $lang['WelcomeToPollerina'] = 'Welcome to Pollerina!';
 $lang['WelcomeText1'] = 'Pollerina is a great way to ask questions that the whole world can answer!';
 $lang['WelcomeText2'] = 'Register to become a user today!';
-
+$lang['UsercountText'] = 'The number of registered users is ';
+$lang['PollcountText'] = ' and the number of created polls is ';
 
 //Find Polls
 $lang['SearchT'] = 'Poll search';

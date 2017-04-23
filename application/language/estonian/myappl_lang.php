@@ -30,6 +30,8 @@ $lang['AboutText'] = 'Pollerina on pollimiskeskkond, mis on loodud Tartu Ülikoo
 $lang['WelcomeToPollerina'] = 'Tere tulemast kasutama teenust Pollerina!';
 $lang['WelcomeText1'] = 'Pollerina võimaldab luua küsitlusi, millele vastab terve maailm!';
 $lang['WelcomeText2'] = 'Registreeri kasutajaks juba täna!';
+$lang['UsercountText'] = 'Registreeritud kasutajaid on ';
+$lang['PollcountText'] = ' ning loodud polle on ';
 
 
 //Find Polls
