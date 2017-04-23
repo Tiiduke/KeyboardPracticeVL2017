@@ -88,6 +88,7 @@ $lang['RegFirstname'] = 'Eesnimi:';
 $lang['RegLastname'] = 'Perekonnanimi:';
 $lang['RegUserErr'] = 'Kasutajanimi on vaja lisada';
 $lang['RegGender'] = 'Sugu:';
+$lang['RegGenderErr'] = 'Sugu tuleb valida';
 $lang['RegMale'] = 'Mees';
 $lang['RegFemale'] = 'Naine';
 $lang['RegBirthdate'] = 'Sünniaeg (aaaa-kk-pp):';

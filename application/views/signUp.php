@@ -1,7 +1,7 @@
 <?php 
 //build up variables for showing errors in case some data is incorrect or not filled
-$firstnameErr = $lastnameErr = $emailErr = $birthdateErr = $passErr = $rPassErr = "";
-$firstname = $lastname = $email = $birthdate = $pass = $rPass = "";
+$firstnameErr = $lastnameErr = $genderErr = $emailErr = $birthdateErr = $passErr = $rPassErr = "";
+$firstname = $lastname = $gender = $email = $birthdate = $language = $pass = $rPass = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["regfirstname"])) {
@@ -16,6 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastname = test_input($_POST["reglastname"]);
   }
   
+/*  echo '<script type="text/javascript">';
+  $gender = echo 'getGender();'
+  echo '</script>';
+  
+  if ($gender() == null) {
+    $genderErr = lang("RegGenderErr");
+  }*/
+
   if (empty($_POST["regemail"])) {
     $emailErr = lang("RegEmailErr");
   } else {
@@ -27,6 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
 	  $birthdate = test_input($_POST["regbirthdate"]);
   }
+  
+  //$language = echo '<script type="text/javascript">', 'getLanguage();', '</script>';
   
   if (empty($_POST["pass"])) {
 	  $passErr = lang("RegPassErr");
@@ -44,24 +54,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	  
   }
    /* 
-  if (empty($_POST["website"])) {
-    $website = "";
-  } else {
-    $website = test_input($_POST["website"]);
-  }
 
   if (empty($_POST["comment"])) {
     $comment = "";
   } else {
     $comment = test_input($_POST["comment"]);
   }
-   
-  if (empty($_POST["gender"])) {
-    $genderErr = "Gender is required";
+   */
+  /*if (!empty($firstname) && !empty($lastname) && !empty($email) && !empty($birthdate) && !empty($pass) && !empty($rPass)) {
+	include 'dbConnect.php';
+	ini_set('display_errors','Off');
+	$conn->query("INSERT INTO usertest (firstname, lastname, sex, email, birthdate, language) VALUES ($firstname, $lastname, '1', $email, $birthdate, 'Eng')");
+	
+	//putting to sleep to allow time for data insertion before next query
+	sleep(1);
+	$useridquery = mysql_query("SELECT userid FROM Usertest WHERE email='$email' LIMIT 1");
+	$userid = mysql_fetch_object($useridquery);
+	
+	$conn->query("INSERT INTO passwordtest (userpassid, password) VALUES ($userid, $password)");
+
+	$conn->close();
+	//echo "$firstname $lastname $email $birthdate $pass $rPass";
+	echo "$firstname $lastname $email $birthdate $language $pass $rPass";
+	echo '<script type="text/javascript">', 'getLanguage();', '</script>';
   } else {
-    $gender = test_input($_POST["gender"]);
-  }
-  */
+	echo "Values not set!";
+//	echo '<script type="text/javascript">', 'document.getElementById('reglanguage').value;', '</script>';
+  }*/
+  
 }
 
 function test_input($data) {
@@ -75,7 +95,7 @@ function test_input($data) {
     <!-- before ja after hoiavad javascripti jaoks andmeid?::before-->
 	<div class="col-sm-10">
 		<div class="valError"></div>
-		<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+		<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" > 
 		<fieldset>
 		<legend><?php echo lang("RegHeader"); ?></legend>
 			<!--First name-->
@@ -89,9 +109,9 @@ function test_input($data) {
 			<span class="error"> <?php echo $lastnameErr;?></span>
 			<br>
 			<!--Gender-->
-			<?php echo lang("RegGender"); ?> <input type="radio" name="reggender" id="male" value="1">
+			<?php echo lang("RegGender"); ?> <input type="radio" name="reggender" id="male" value="1" checked>
 			<label for="male"><?php echo lang("RegMale"); ?></label>
-			<input type="radio" name="reggender" id="female" value="2">
+			<input type="radio" name="reggender" onclick="check();" id="female" value="2">
 			<label for="female"><?php echo lang("RegFemale"); ?></label>
 			<br>
 			<br>
@@ -103,7 +123,7 @@ function test_input($data) {
 			<!--Language-->
 			<label for="reglanguage"><?php echo lang("RegLanguage"); ?></label> 
 			<select id="reglanguage">
-				<option value="Eng"><?php echo lang("English"); ?></option>
+				<option value="Eng" selected="selected"><?php echo lang("English"); ?></option>
 				<option value="Est"><?php echo lang("Estonian"); ?></option>
 			</select>
 			<br>

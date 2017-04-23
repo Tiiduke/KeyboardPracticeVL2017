@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if(!isset($_SESSION)) { 
 	session_start();
 	}
-$this->lang->load('myappl', $this->session->userdata('site_lang'));
 $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 ?>
 <!DOCTYPE html>
@@ -31,6 +30,7 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 	-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 	<script type="text/javascript" src="../../js/logIn.js"></script>
+	<script type="text/javascript" src="../../js/checker.js"></script>
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 	</head>

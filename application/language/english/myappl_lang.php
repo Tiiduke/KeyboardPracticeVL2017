@@ -89,6 +89,7 @@ $lang['RegFirstname'] = 'First name:';
 $lang['RegLastname'] = 'Last name:';
 $lang['RegUserErr'] = 'A name is required';
 $lang['RegGender'] = 'Gender:';
+$lang['RegGenderErr'] = 'Gender not selected';
 $lang['RegMale'] = 'Male';
 $lang['RegFemale'] = 'Female';
 $lang['RegBirthdate'] = 'Birthdate (yyyy-mm-dd):';
