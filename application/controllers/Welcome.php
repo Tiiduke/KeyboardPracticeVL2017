@@ -24,8 +24,9 @@ class Welcome extends CI_Controller {
 	{
 		if(!isset($_SESSION)) { 
 			session_start();
-		}		
-		$title['title'] = 'Home';
+		}
+		$this->lang->load('myappl', $this->session->userdata('site_lang'));
+		$title['title'] = lang('menu_mainpage');
 		$this->load->view('header', $title);
 		$this->load->view('welcome_message');
 		$this->load->view('footer');
@@ -35,17 +36,18 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION)) { 
 			session_start();
 		}
-		$title['title'] = 'About'; //lang('About'); //Does not work for some reason
+		$this->lang->load('myappl', $this->session->userdata('site_lang'));
+		$title['title'] = lang('About'); //Does not work for some reason
 		$this->load->view('header', $title);
 		$this->load->view('about');
 		$this->load->view('footer');
-		
 	}
 	public function contactUs() {
 		if(!isset($_SESSION)) { 
 			session_start();
 		}		
-		$title['title'] = 'Contact Us';// lang('Contact'); //Does not work for some reason
+		$this->lang->load('myappl', $this->session->userdata('site_lang'));
+		$title['title'] = lang('Contact'); //Does not work for some reason
 		$this->load->view('header', $title);
 		$this->load->view('contactUs');
 		$this->load->view('footer');
@@ -54,7 +56,8 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION)) { 
 			session_start();
 		}		
-		$title['title'] = 'Find Polls';
+		$this->lang->load('myappl', $this->session->userdata('site_lang'));
+		$title['title'] = lang('menu_mainFP');
 		$this->load->view('header', $title);
 		$this->load->view('findPolls');
 		$this->load->view('footer');
@@ -66,7 +69,8 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION)) { 
 			session_start();
 		}		
-		$title['title'] = 'Your Polls';
+		$this->lang->load('myappl', $this->session->userdata('site_lang'));
+		$title['title'] = lang('menu_mainYP');
 		$this->load->view('header', $title);
 		$this->load->view('yourPolls');
 		$this->load->view('footer');
@@ -76,7 +80,8 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION)) { 
 			session_start();
 		}		
-		$title['title'] = 'Account';
+		$this->lang->load('myappl', $this->session->userdata('site_lang'));
+		$title['title'] = lang('Account');
 		$this->load->view('header', $title);
 		$this->load->view('account');
 		$this->load->view('footer');
@@ -86,7 +91,8 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION)) { 
 			session_start();
 		}		
-		$title['title'] = 'Create Polls';
+		$this->lang->load('myappl', $this->session->userdata('site_lang'));
+		$title['title'] = lang('menu_mainCP');
 		$this->load->view('header', $title);
 		$this->load->view('createPolls');
 		$this->load->view('footer');
@@ -100,6 +106,7 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION)) { 
 			session_start();
 		}		
+		$this->lang->load('myappl', $this->session->userdata('site_lang'));
 		$title['title'] = 'Sign up';
 		$this->load->view('header', $title);
 		$this->load->view('signUp');
