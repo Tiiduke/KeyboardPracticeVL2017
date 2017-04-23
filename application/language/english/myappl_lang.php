@@ -106,6 +106,11 @@ $lang['RegRepPassErr'] = 'You need to reenter your password as well';
 $lang['RegRepPassErrNotSame'] = 'the password entered was not the same';
 $lang['RegTerms'] = 'I have read and agree to the *nonexistent* Terms and Conditions';
 $lang['RegComplete'] = 'Finish';
+$lang['AccountCreate1'] = 'Adding new user: ';
+$lang['AccountCreate2'] = ' Adding password to user: ';
+$lang['Success'] = 'Success!';
+$lang['Fail'] = 'Failed!';
+
 
 //Contact us
 $lang['Country'] = 'ESTONIA';

@@ -61,26 +61,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comment = test_input($_POST["comment"]);
   }
    */
-  /*if (!empty($firstname) && !empty($lastname) && !empty($email) && !empty($birthdate) && !empty($pass) && !empty($rPass)) {
+  if (!empty($firstname) && !empty($lastname) && !empty($email) && !empty($birthdate) && !empty($pass) && !empty($rPass)) {
 	include 'dbConnect.php';
 	ini_set('display_errors','Off');
-	$conn->query("INSERT INTO usertest (firstname, lastname, sex, email, birthdate, language) VALUES ($firstname, $lastname, '1', $email, $birthdate, 'Eng')");
 	
-	//putting to sleep to allow time for data insertion before next query
-	sleep(1);
-	$useridquery = mysql_query("SELECT userid FROM Usertest WHERE email='$email' LIMIT 1");
-	$userid = mysql_fetch_object($useridquery);
+	//Adding new user to database
+	$sqlinsert = "INSERT INTO usertest (firstname, lastname, sex, email, birthdate, language) VALUES ('$firstname', '$lastname', '1', '$email', '$birthdate', 'Eng')";
 	
-	$conn->query("INSERT INTO passwordtest (userpassid, password) VALUES ($userid, $password)");
+	if ($conn->query($sqlinsert) === TRUE) {
+		$usersuccess = lang("Success");
+	} else {
+		$usersuccess = lang("Fail");
+	}
+	
+	//Checking created user's id to add password to separate table
+	$sqlselect = "SELECT userid FROM Usertest WHERE email='$email' LIMIT 1";
+	$sqlresult = $conn->query($sqlselect);
+	if ($sqlresult->num_rows > 0) {
+		while($row = $sqlresult->fetch_assoc()) {
+			$_SESSION["userid"] = $row['userid'];
+		}
+		$userpassid = $_SESSION["userid"];
+	}
+	
+	//Adding password to database
+	$sqlpass = "INSERT INTO passwordtest (userpassid, password) VALUES ('$userpassid', '$pass')";
+	if ($conn->query($sqlpass) === TRUE) {
+		$passsuccess = lang("Success");
+	} else {
+		$passsuccess = lang("Fail");
+	}
 
 	$conn->close();
-	//echo "$firstname $lastname $email $birthdate $pass $rPass";
-	echo "$firstname $lastname $email $birthdate $language $pass $rPass";
-	echo '<script type="text/javascript">', 'getLanguage();', '</script>';
-  } else {
-	echo "Values not set!";
-//	echo '<script type="text/javascript">', 'document.getElementById('reglanguage').value;', '</script>';
-  }*/
+	echo lang('AccountCreate1');
+	echo $usersuccess;
+	echo lang('AccountCreate2');
+	echo $passsuccess;
+	//echo "$firstname $lastname $email $birthdate $language $pass $rPass";
+  }
   
 }
 

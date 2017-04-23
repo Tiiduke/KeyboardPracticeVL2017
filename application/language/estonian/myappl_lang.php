@@ -105,6 +105,11 @@ $lang['RegRepPassErr'] = 'Sa pead parooli ka siin uuesti lisama';
 $lang['RegRepPassErrNotSame'] = 'Sisestatud paroolid ei ühti omavahel';
 $lang['RegTerms'] = 'Ma olen lugenud ja nõustunud (mitteeksisteerivate) kasutajatingimustega';
 $lang['RegComplete'] = 'Registreeri';
+$lang['AccountCreate1'] = 'Uue kasutaja loomine: ';
+$lang['AccountCreate2'] = ' Kasutajale parooli lisamine: ';
+$lang['Success'] = 'Õnnestus!';
+$lang['Fail'] = 'Ebaõnnestus!';
+
 
 //Contact us
 $lang['Country'] = 'EESTI';
