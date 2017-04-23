@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	ini_set('display_errors','Off');
 	
 	//Adding new user to database
-	$sqlinsert = "INSERT INTO usertest (firstname, lastname, sex, email, birthdate, language) VALUES ('$firstname', '$lastname', '1', '$email', '$birthdate', 'Eng')";
+	$sqlinsert = "INSERT INTO Usertest (FirstName, LastName, Sex, Email, Birthdate, Language) VALUES ('$firstname', '$lastname', '1', '$email', '$birthdate', 'Eng')";
 	
 	if ($conn->query($sqlinsert) === TRUE) {
 		$usersuccess = lang("Success");
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 	
 	//Checking created user's id to add password to separate table
-	$sqlselect = "SELECT userid FROM Usertest WHERE email='$email' LIMIT 1";
+	$sqlselect = "SELECT UserID FROM Usertest WHERE Email='$email' LIMIT 1";
 	$sqlresult = $conn->query($sqlselect);
 	if ($sqlresult->num_rows > 0) {
 		while($row = $sqlresult->fetch_assoc()) {
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	}
 	
 	//Adding password to database
-	$sqlpass = "INSERT INTO passwordtest (userpassid, password) VALUES ('$userpassid', '$pass')";
+	$sqlpass = "INSERT INTO Passwordtest (UserPassID, Password) VALUES ('$userpassid', '$pass')";
 	if ($conn->query($sqlpass) === TRUE) {
 		$passsuccess = lang("Success");
 	} else {
