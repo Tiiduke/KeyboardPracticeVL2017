@@ -131,28 +131,3 @@ nav li #login-content { /*width here deals with length*/
   right: 2px;
 }
 
-#logout{
-  background-color: #1f91a5;
-  background-image: linear-gradient(#e97171, #d14545);
-  border-radius: 3px;
-  text-shadow: 0 1px 0 rgba(0,0,0,.5);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
-  border: 1px solid #7e1515;
-  float: left;
-  height: 30px;
-  padding: 0;
-  width: 100px;
-  cursor: pointer;
-  font: bold 14px Arial, Helvetica;
-  color: #fff;
-}
-#logout:hover,
-#logout:focus {    
-  background-color: #43c5dc;
-  background-image: linear-gradient(#d14545, #e97171);
-} 
-
-#logout:active {   
-  outline: none;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;   
-}

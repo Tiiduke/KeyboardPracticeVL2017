@@ -108,6 +108,19 @@ class Welcome extends CI_Controller {
 		
 	}
 	
+	public function logOut() //enterable screen when you wish to log out
+	{
+		if(!isset($_SESSION)) { 
+			session_start();
+		}		
+		$title['title'] = 'Log out';
+		$this->load->view('header', $title);
+		$this->load->view('logOut');
+		$this->load->view('footer');
+		
+		
+	}
+	
 	public function vahetaKeelt($language = "") //keele vahetamine
 	{
 		if(!isset($_SESSION)) { 

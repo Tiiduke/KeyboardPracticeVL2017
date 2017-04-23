@@ -78,11 +78,12 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 						echo '<a href="'. base_url() . 'index.php/welcome/signUp">'. lang("SignUp") . '</a>';
 					}
 					if (isset($_SESSION["firstname"])) {
-						echo '<li id="logout">';
-						echo '<input type="submit" id="logout" value=' . lang("LogOut") . '>';
+						//echo '<li id="logout">';
+						//echo '<input type="submit" id="logout" value=' . lang("LogOut") . '>';
 						//echo '<a id="login-trigger" href="#">';
+						echo '<li><a href=" ' . base_url() . 'index.php/welcome/logOut">' . lang("LogOut") . '</a></li>';
 							//echo lang("LogOut");
-						echo '</a>';
+						//echo '</a>';
 						
 					}
 				?>
