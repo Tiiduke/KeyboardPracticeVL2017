@@ -79,9 +79,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$sqlresult = $conn->query($sqlselect);
 	if ($sqlresult->num_rows > 0) {
 		while($row = $sqlresult->fetch_assoc()) {
-			$_SESSION["userid"] = $row['userid'];
+			$_SESSION["UserID"] = $row['UserID'];
 		}
-		$userpassid = $_SESSION["userid"];
+		$userpassid = $_SESSION["UserID"];
 	}
 	
 	//Adding password to database
