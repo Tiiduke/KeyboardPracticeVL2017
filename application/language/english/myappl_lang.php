@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$lang['siteMapIn'] = 'Visitable webpages:';
+
 //Header
 $lang['menu_mainpage'] = 'Home';
 $lang['menu_mainFP'] = 'Find Polls';
@@ -16,6 +18,8 @@ $lang['ParIn'] = 'Password';
 $lang['LogIn'] = 'Log in';
 $lang['keepLog'] = 'Keep me signed in';
 $lang['LogOut'] = 'Exit';
+
+$lang['SiteMap'] = 'All pages';
 
 
 //Footer

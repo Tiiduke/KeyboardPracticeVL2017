@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+$lang['siteMapIn'] = 'Külastatavad leheküljed:';
+
 //Header
 $lang['menu_mainpage'] = 'Avalehekülg';
 $lang['menu_mainFP'] = 'Leia Polle';
@@ -16,6 +18,8 @@ $lang['ParIn'] = 'Parool';
 $lang['LogIn'] = 'Logi sisse';
 $lang['keepLog'] = 'Hoia sisse logituna';
 $lang['LogOut'] = 'Välju';
+
+$lang['SiteMap'] = 'Kõik lehed';
 
 
 //Footer

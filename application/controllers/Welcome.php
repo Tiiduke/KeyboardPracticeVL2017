@@ -128,6 +128,17 @@ class Welcome extends CI_Controller {
 		
 	}
 	
+	public function siteMap()	{
+		if(!isset($_SESSION)) { 
+			session_start();
+		}
+		$this->lang->load('myappl', $this->session->userdata('site_lang'));
+		$title['title'] = './'; //Does not work for some reason
+		$this->load->view('header', $title);
+		$this->load->view('siteMap');
+		$this->load->view('footer');
+	}
+	
 	public function vahetaKeelt($language = "") //keele vahetamine
 	{
 		if(!isset($_SESSION)) { 
