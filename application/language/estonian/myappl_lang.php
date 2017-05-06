@@ -8,18 +8,18 @@ $lang['menu_mainpage'] = 'Avalehekülg';
 $lang['menu_mainFP'] = 'Leia Polle';
 $lang['menu_mainYP'] = 'Sinu Pollid';
 $lang['menu_mainCP'] = 'Loo Poll';
-$lang['Account'] = 'Kasutaja';
+$lang['Account'] = 'Konto';
 $lang['Login'] = 'Logi sisse';
 $lang['SignUp'] = 'Registreeri';
-$lang['UE'] = 'Kasutajanimi/e-mail:';
+$lang['UE'] = 'Kasutajanimi/e-mail: ';
 $lang['UEIn'] = 'Kasutaja/e-mail';
 $lang['Par'] = 'Parool:';
 $lang['ParIn'] = 'Parool';
 $lang['LogIn'] = 'Logi sisse';
 $lang['keepLog'] = 'Hoia sisse logituna';
 $lang['LogOut'] = 'Välju';
-
 $lang['SiteMap'] = 'Kõik lehed';
+$lang['LoginFail'] = 'Sisselogimine ebaõnnestus!';
 
 
 //Footer
@@ -85,25 +85,27 @@ $lang['CrErr3'] = 'Vastusevalikud ei saa olla samad!';
 //Account
 $lang['Hello'] = 'Tere';
 $lang['NotLoggedIn'] = 'Kasutaja andmete nägemiseks peate olema sisse logitud.';
-
+$lang['DelAccount'] = 'Konto kustutamine';
+$lang['AccountDel'] = 'Konto kustutamine: ';
+$lang['PassDel'] = ' Parooli kustutamine: ';
 
 //Sign Up
 $lang['RegHeader'] = 'Pollerina kasutaja registreerimine';
-$lang['RegUser'] = 'Kasutajanimi:';
-$lang['RegFirstname'] = 'Eesnimi:';
-$lang['RegLastname'] = 'Perekonnanimi:';
+$lang['RegUser'] = 'Kasutajanimi: ';
+$lang['RegFirstname'] = 'Eesnimi: ';
+$lang['RegLastname'] = 'Perekonnanimi: ';
 $lang['RegUserErr'] = 'Kasutajanimi on vaja lisada';
-$lang['RegGender'] = 'Sugu:';
+$lang['RegGender'] = 'Sugu: ';
 $lang['RegGenderErr'] = 'Sugu tuleb valida';
 $lang['RegMale'] = 'Mees';
 $lang['RegFemale'] = 'Naine';
-$lang['RegBirthdate'] = 'Sünniaeg (aaaa-kk-pp):';
+$lang['RegBirthdate'] = 'Sünniaeg (aaaa-kk-pp): ';
 $lang['RegBirthdateErr'] = 'Sünniaeg on vaja lisada';
-$lang['RegLanguage'] = 'Keel:';
-$lang['RegEmail'] = 'Meiliaadress:';
+$lang['RegLanguage'] = 'Keel: ';
+$lang['RegEmail'] = 'Meiliaadress: ';
 $lang['RegEmailTooltip'] = 'Registreerimisel kasutatud meiliaadressi kasutatakse edaspidi kasutajanimena sisselogimisel';
 $lang['RegEmailErr'] = 'Meiliaadress on vaja lisada';
-$lang['RegPass'] = 'Parool:';
+$lang['RegPass'] = 'Parool: ';
 $lang['RegPassTooltip'] = 'Parool peab olema vähemalt 8 tähemärki pikk, sisaldama numbreid ning suuri ja väikseid tähti';
 $lang['RegPassErr'] = 'Parool on vaja lisada';
 $lang['RegRepPass'] = 'Korda parooli:';

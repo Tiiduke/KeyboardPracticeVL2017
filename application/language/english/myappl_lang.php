@@ -11,15 +11,15 @@ $lang['menu_mainCP'] = 'Create Polls';
 $lang['Account'] = 'Account';
 $lang['Login'] = 'Log in';
 $lang['SignUp'] = 'Sign up';
-$lang['UE'] = 'Username/e-mail';
+$lang['UE'] = 'Username/e-mail: ';
 $lang['UEIn'] = 'Username/e-mail';
 $lang['Par'] = 'Password:';
 $lang['ParIn'] = 'Password';
 $lang['LogIn'] = 'Log in';
 $lang['keepLog'] = 'Keep me signed in';
 $lang['LogOut'] = 'Exit';
-
 $lang['SiteMap'] = 'All pages';
+$lang['LoginFail'] = 'Login failed!';
 
 
 //Footer
@@ -85,25 +85,28 @@ $lang['CrErr3'] = 'Answer options cannot be identical!';
 //Account
 $lang['Hello'] = 'Hello';
 $lang['NotLoggedIn'] = 'You need to be logged in to view account data.';
+$lang['DelAccount'] = 'Delete account';
+$lang['AccountDel'] = 'Account deletion: ';
+$lang['PassDel'] = ' Password deletion: ';
 
 
 //Sign Up
 $lang['RegHeader'] = 'Pollerina user registration';
-$lang['RegUser'] = 'User name:';
-$lang['RegFirstname'] = 'First name:';
-$lang['RegLastname'] = 'Last name:';
+$lang['RegUser'] = 'User name: ';
+$lang['RegFirstname'] = 'First name: ';
+$lang['RegLastname'] = 'Last name: ';
 $lang['RegUserErr'] = 'A name is required';
-$lang['RegGender'] = 'Gender:';
+$lang['RegGender'] = 'Gender: ';
 $lang['RegGenderErr'] = 'Gender not selected';
 $lang['RegMale'] = 'Male';
 $lang['RegFemale'] = 'Female';
-$lang['RegBirthdate'] = 'Birthdate (yyyy-mm-dd):';
+$lang['RegBirthdate'] = 'Birthdate (yyyy-mm-dd): ';
 $lang['RegBirthdateErr'] = 'Birthdate is required';
-$lang['RegLanguage'] = 'Language:';
-$lang['RegEmail'] = 'Email:';
+$lang['RegLanguage'] = 'Language: ';
+$lang['RegEmail'] = 'Email: ';
 $lang['RegEmailTooltip'] = 'The e-mail address used for registration will be used as the username for logging in';
 $lang['RegEmailErr'] = 'An email is required';
-$lang['RegPass'] = 'Password:';
+$lang['RegPass'] = 'Password: ';
 $lang['RegPassTooltip'] = 'Password must be at least 8 characters in length, contain numbers as well as small and capital letters';
 $lang['RegPassErr'] = 'A password is required';
 $lang['RegRepPass'] = 'Repeat Password:';

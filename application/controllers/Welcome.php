@@ -86,6 +86,17 @@ class Welcome extends CI_Controller {
 		$this->load->view('account');
 		$this->load->view('footer');
 	}
+	public function delAccount()//needs login before proper usage
+	{
+		if(!isset($_SESSION)) { 
+			session_start();
+		}		
+		$this->lang->load('myappl', $this->session->userdata('site_lang'));
+		$title['title'] = lang('DelAccount');
+		$this->load->view('header', $title);
+		$this->load->view('delAccount');
+		$this->load->view('footer');
+	}
 	public function createPolls()//needs login before proper usage
 	{
 		if(!isset($_SESSION)) { 

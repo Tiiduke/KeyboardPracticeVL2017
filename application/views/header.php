@@ -138,8 +138,8 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 				/*echo "Login required.";*/
 			}
 			else {
-				echo "Login failed!<br>";
-				echo "Email ($email) or password ($password) is wrong.";
+				echo lang("LoginFail");
+				echo "<br>";
 				session_unset();
 				session_start();
 				$_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
