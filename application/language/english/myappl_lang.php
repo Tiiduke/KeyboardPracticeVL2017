@@ -61,6 +61,8 @@ $lang['SearchSearch'] = 'Search';
 //Find polls category subs
 $lang['Category1'] = 'Politics';
 $lang['Category2'] = 'Religion';
+$lang['Category3'] = 'Keywords';
+$lang['Category4'] = 'Author';
 
 
 //Your Polls

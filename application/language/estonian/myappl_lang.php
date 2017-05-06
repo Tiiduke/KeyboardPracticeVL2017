@@ -62,6 +62,8 @@ $lang['SearchSearch'] = 'Otsi';
 //Find polls category subs
 $lang['Category1'] = 'Poliitika';
 $lang['Category2'] = 'Religioon';
+$lang['Category3'] = 'Võtmesõnad';
+$lang['Category4'] = 'Autor';
 
 
 //Your Polls

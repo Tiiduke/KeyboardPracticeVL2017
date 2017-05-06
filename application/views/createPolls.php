@@ -76,3 +76,17 @@ function test_input($data) {
 	</div>
 	<!--::after-->  
 </div>
+
+<?php
+if(empty($questionErr) and empty($option1err))
+{
+	echo 'vist nii saab tingimused täidetud saatmiseks';
+	//kuidagi nii andmed saata?
+	//kuskil ka kontrollib keeleväärtust, et õigesse lahtrisse saata?
+	/*
+	$sql = mysql_query("insert into __nimi__ values __nimi__");
+	$sql = mysql_query("insert into __nimi__ values __nimi__");
+	*/
+}
+
+?>

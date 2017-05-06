@@ -9,6 +9,21 @@ JavaScript, or PHP, whichever strikes your fancy more.
 <form action= "/action_page.php"> <!--Needs an actual separate webpage for this-->
 <fieldset>
 <legend><?php echo lang("SearchT"); ?></legend>
+
+	<!--
+	Võibolla asendada kahe sisendi asemel üks sisend ja dropdown, kus saab valida, kas autor või keyword,
+	siis saab teha "FROM __vastavlahter__"  
+	-->
+	<!--
+	<div id="catType">
+		<label for="category"><?php echo lang("SearchCate"); ?></label> 
+		<select id="category">
+		<option value="cat1"><?php echo lang("Category3"); ?></option>
+		<option value="cat2"><?php echo lang("Category4"); ?></option>
+		</select>
+	</div>
+	-->
+	
 	<div id="nameEntry">
 		<label for="keyword"><?php echo lang("SearchKey"); ?></label>
 		<input type="text" id="keyword" name="keyword" value=""><br>
@@ -17,14 +32,8 @@ JavaScript, or PHP, whichever strikes your fancy more.
 	</div>
 	
 	
-	<div id="catType">
-		<label for="category"><?php echo lang("SearchCate"); ?></label> 
-		<select id="category">
-		<option value="cat1"><?php echo lang("Category1"); ?></option>
-		<option value="cat2"><?php echo lang("Category2"); ?></option>
-		</select>
-	</div>
-	
+
+	<!--WHERE __column?__ BETWEEN __date1__ AND __date2__-->
 	<div id="ageFilter">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery-ui.css" type="text/css" />
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css" type="text/css" />
@@ -39,6 +48,7 @@ JavaScript, or PHP, whichever strikes your fancy more.
 		 
 	</div>
 	
+	<!--ORDER BY __column__ ASC|DESC-->
 	<div id="newOrOld">
 		<?php echo lang("SearchFilTim"); ?> <input type="radio" name="pollAge" id="newer" value="1" checked="checked">
 		<label for="newer"><?php echo lang("SearchTimNew"); ?></label>
@@ -46,21 +56,26 @@ JavaScript, or PHP, whichever strikes your fancy more.
 		<label for="older"><?php echo lang("SearchTimOld"); ?></label>
 	</div>
 	
+	<!--Pakun et see on ebavajalik-->
+	<!--
 	<div id="popularityFilter">
-		<?php echo lang("SearchFilPop"); ?> <input type="radio" name="pollPopularity" id="more" value="1" checked="checked">
-		<label for="more"><?php echo lang("SearchPopMor"); ?></label>
+		<?php //echo lang("SearchFilPop"); ?> <input type="radio" name="pollPopularity" id="more" value="1" checked="checked">
+		<label for="more"><?php //echo lang("SearchPopMor"); ?></label>
 		<input type="radio" name="pollPopularity" id="less" value="2">
-		<label for="less"><?php echo lang("SearchPopLes"); ?></label>
+		<label for="less"><?php //echo lang("SearchPopLes"); ?></label>
 	</div>
-	
+	-->
+	<!--Pakun et selle võiks ka maha võtta-->
+	<!--
 	<div id="pollActivity">
-		<?php echo lang("SearchFilAct"); ?> <input type="radio" name="pollActivity" id="active" value="1">
-		<label for="active"><?php echo lang("SearchPolAc"); ?></label>
+		<?php //echo lang("SearchFilAct"); ?> <input type="radio" name="pollActivity" id="active" value="1">
+		<label for="active"><?php //echo lang("SearchPolAc"); ?></label>
 		<input type="radio" name="pollActivity" id="closed" value="2">
-		<label for="closed"><?php echo lang("SearchPolCl"); ?></label>
+		<label for="closed"><?php //echo lang("SearchPolCl"); ?></label>
 		<input type="radio" name="pollActivity" id="all" value="3" checked="checked">
-		<label for="all"><?php echo lang("SearchPolAl"); ?></label>
+		<label for="all"><?php //echo lang("SearchPolAl"); ?></label>
 	</div>
+	-->
 	
 	</fieldset>
 	
