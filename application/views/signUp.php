@@ -1,4 +1,7 @@
 <?php 
+if(!isset($_SESSION)) { 
+	session_start();
+	}
 //build up variables for showing errors in case some data is incorrect or not filled
 $firstnameErr = $lastnameErr = $genderErr = $emailErr = $birthdateErr = $passErr = $rPassErr = "";
 $firstname = $lastname = $gender = $email = $birthdate = $language = $pass = $rPass = "";

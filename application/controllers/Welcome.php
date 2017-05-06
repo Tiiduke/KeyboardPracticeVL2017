@@ -107,7 +107,7 @@ class Welcome extends CI_Controller {
 			session_start();
 		}		
 		$this->lang->load('myappl', $this->session->userdata('site_lang'));
-		$title['title'] = 'Sign up';
+		$title['title'] = lang('SignUp');
 		$this->load->view('header', $title);
 		$this->load->view('signUp');
 		$this->load->view('footer');
@@ -120,7 +120,8 @@ class Welcome extends CI_Controller {
 		if(!isset($_SESSION)) { 
 			session_start();
 		}		
-		$title['title'] = 'Log out';
+		$this->lang->load('myappl', $this->session->userdata('site_lang'));
+		$title['title'] = lang('LogOut');
 		$this->load->view('header', $title);
 		$this->load->view('logOut');
 		$this->load->view('footer');
@@ -133,7 +134,7 @@ class Welcome extends CI_Controller {
 			session_start();
 		}
 		$this->lang->load('myappl', $this->session->userdata('site_lang'));
-		$title['title'] = './'; //Does not work for some reason
+		$title['title'] = lang('SiteMap');
 		$this->load->view('header', $title);
 		$this->load->view('siteMap');
 		$this->load->view('footer');

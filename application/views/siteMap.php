@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION)) { 
+	session_start();
+	}
+?>
 <p class="text-center"><?php echo lang('siteMapIn');?></p>
 NB: sitemap leht võib küll praegu nii olla, kuid siin peab ka tulema iga poll'i jaoks link... 
 <div class="container-fluid">
