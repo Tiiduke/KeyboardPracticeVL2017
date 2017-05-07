@@ -70,6 +70,7 @@ $lang['Category4'] = 'Author';
 
 //Your Polls
 $lang['YourPollsIntro'] = 'Below are the polls you have created:';
+$lang['YourPollsAnswers'] = 'Below are answers to the polls you have created:';
 $lang['YourPollsNone'] = "You haven't created any polls yet.";
 $lang['YourPollsLogin'] = "You need to be logged in to view your polls.";
 $lang['Delete'] = "Delete";

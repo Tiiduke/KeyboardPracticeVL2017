@@ -71,6 +71,7 @@ $lang['Category4'] = 'Autor';
 
 //Your Polls
 $lang['YourPollsIntro'] = 'Allpool on kuvatud sinu loodud pollid:';
+$lang['YourPollsAnswers'] = 'Allpool on kuvatud sinu loodud pollidele antud vastused:';
 $lang['YourPollsNone'] = "Sa ei ole loonud veel ühtegi polli.";
 $lang['YourPollsLogin'] = "Pollide vaatamiseks pead olema sisse logitud.";
 $lang['Delete'] = "Kustuta";

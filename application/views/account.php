@@ -29,7 +29,8 @@
 		echo lang("RegPass") . $_SESSION["password"];
 		echo "<br>";
 		echo "<br>";
-		echo '<li><a href=" ' . base_url() . 'index.php/welcome/delAccount">' . lang("DelAccount") . '</a></li>';
+		echo '<a href=" ' . base_url() . 'index.php/welcome/delAccount">' . lang("DelAccount") . '</a>';
+		echo "<br>";
 	} else {
 		echo lang("NotLoggedIn");
 	}

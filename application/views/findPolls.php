@@ -96,10 +96,10 @@ JavaScript, or PHP, whichever strikes your fancy more.
 	$sqlsearch = "SELECT Polltest.PollID, Usertest.Email, Questiontest.Question, Polltest.RegDate
 FROM Usertest INNER JOIN (Polltest INNER JOIN Questiontest ON Polltest.PollID = Questiontest.PollID) ON Usertest.UserID = Polltest.UserID WHERE Questiontest.Language = '$searchlanguage' AND LOWER(Question) LIKE LOWER('%$searchword%') AND LOWER(Email) LIKE LOWER('%$searchauthor%') ORDER BY RegDate $searchpollage";
 	$searchresult = $conn->query($sqlsearch);
-	echo '<table class="table table-striped table-bordered table-hover">';
-	echo "<tr><th>PollID:</th><th>Email:</th><th>Question:</th><th>RegDate:</th></tr>"; 
 	if ($searchresult->num_rows > 0) {
 		echo lang('Results');
+		echo '<table class="table table-striped table-bordered table-hover">';
+		echo "<tr><th>PollID:</th><th>Email:</th><th>Question:</th><th>RegDate:</th></tr>"; 
 		// output data of each row
 		while($row = $searchresult->fetch_assoc()) {
 			echo "<tr><td>"; 
@@ -112,10 +112,10 @@ FROM Usertest INNER JOIN (Polltest INNER JOIN Questiontest ON Polltest.PollID = 
 			echo $row['RegDate'];
 			echo "</td></tr>";  
 		}
+		echo '</table>';
 	} elseif ($searchresult->num_rows == 0){
 		echo lang('NoResults');
 	}
-	echo '</table>';
 	$conn->close();
 	
 ?>

@@ -4,7 +4,6 @@ if(!isset($_SESSION)) {
 	}
 ?>
 <p class="text-center"><?php echo lang('siteMapIn');?></p>
-NB: sitemap leht võib küll praegu nii olla, kuid siin peab ka tulema iga poll'i jaoks link... 
 <div class="container-fluid">
 	    <p class="text-center">
 		<a href="<?php echo base_url(); ?>index.php/welcome/"><?php echo lang("menu_mainpage"); ?></a>
@@ -15,7 +14,7 @@ NB: sitemap leht võib küll praegu nii olla, kuid siin peab ka tulema iga poll'
 		<br>
 		<a href="<?php echo base_url(); ?>index.php/welcome/createPolls"><?php echo lang("menu_mainCP"); ?></a>
 		<br>
-		<a href="<?php echo base_url(); ?>index.php/welcome/account"><?php echo lang("Account"); ?></a></li>
+		<a href="<?php echo base_url(); ?>index.php/welcome/account"><?php echo lang("Account"); ?></a>
 		<br>
 		<a href="<?php echo base_url(); ?>index.php/welcome/signUp"> <?php echo lang("SignUp"); ?></a>
 		<br>
