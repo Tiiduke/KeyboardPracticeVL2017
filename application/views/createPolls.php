@@ -28,6 +28,9 @@ function test_input($data) {
 }
 ?>
 
+
+
+
 <div class="container text-left">
     <!-- before ja after hoiavad javascripti jaoks andmeid?::before-->
 	<div class="col-sm-10">
