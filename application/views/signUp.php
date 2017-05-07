@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	  $birthdate = test_input($_POST["regbirthdate"]);
   }
   
-  //$language = echo '<script type="text/javascript">', 'getLanguage();', '</script>';
+  $language = lang('Language');
   
   if (empty($_POST["pass"])) {
 	  $passErr = lang("RegPassErr");
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	ini_set('display_errors','Off');
 	
 	//Adding new user to database
-	$sqlinsert = "INSERT INTO Usertest (FirstName, LastName, Sex, Email, Birthdate, Language) VALUES ('$firstname', '$lastname', '1', '$email', '$birthdate', 'Eng')";
+	$sqlinsert = "INSERT INTO Usertest (FirstName, LastName, Sex, Email, Birthdate, Language) VALUES ('$firstname', '$lastname', '1', '$email', '$birthdate', '$language')";
 	
 	if ($conn->query($sqlinsert) === TRUE) {
 		$usersuccess = lang("Success");
