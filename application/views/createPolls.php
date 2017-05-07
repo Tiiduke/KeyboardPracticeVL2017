@@ -4,6 +4,11 @@ $questionErr = $option1err = $option2err = $option3err = $option4err = $option5e
 $question = $option1 = $option2 = $option3 = $option4 = $option5 = "";
 
 $email = $_SESSION['email'];
+$userid = $_SESSION['UserID'];
+
+if ($email == "") {
+	echo lang("CreatePollsLogin");
+}
 include 'dbConnect.php';
 ini_set('display_errors','Off');
 
@@ -40,23 +45,20 @@ function test_input($data) {
 	return $data;
 }
 
-if (!empty($question) && !empty($option1) && !empty($option2)) {
+if (!empty($userid) && !empty($question) && !empty($option1) && !empty($option2)) {
 	echo lang('CreateSuccess');
-	$regdate = '0000-00-00';
-	$userid = $_SESSION['UserID'];
-	
 	
 	$type = '1';
-	$category = '';
+	$category = $_POST['category'];
 	$privacy = '1';
 	$language = lang('Language');
 	$openstatus = '1';
 
-	$sqlcreatepoll = "INSERT INTO Polltest (PollID, RegDate, UserID, Type, Category, Privacy, Language, OpenStatus) VALUES (NULL, '$regdate', '$userid', '$type', '$category', '$privacy', '$language', '$openstatus')";
+	$sqlcreatepoll = "INSERT INTO Polltest (PollID, RegDate, UserID, Type, Category, Privacy, Language, OpenStatus) VALUES (NULL, (SELECT CURDATE()), '$userid', '$type', '$category', '$privacy', '$language', '$openstatus')";
 	
 	$conn->query($sqlcreatepoll);
 
-	$sqlpollid = "SELECT PollID FROM Polltest WHERE RegDate='$regdate' AND UserID='$userid' ORDER BY PollID DESC LIMIT 1";
+	$sqlpollid = "SELECT PollID FROM Polltest WHERE RegDate=(SELECT CURDATE()) AND UserID='$userid' ORDER BY PollID DESC LIMIT 1";
 
 	$sqlpollidresult = $conn->query($sqlpollid);
 	if ($sqlpollidresult->num_rows > 0) {
@@ -101,6 +103,9 @@ if (!empty($question) && !empty($option1) && !empty($option2)) {
 			<label for="question"><?php echo lang("CrQuest"); ?></label>
 			<input type="text" id="question" name="question" class="form-control" value="<?= isset($_POST['question']) ? $_POST['question'] : ''; ?>">
 			<span class="error"> <?php echo $questionErr;?></span>
+			<br>
+			<label for="category"><?php echo lang("CrCategory"); ?></label>
+			<input type="text" id="category" name="category" class="form-control" value="<?= isset($_POST['category']) ? $_POST['category'] : ''; ?>">
 			<br>
 			<h3><?php echo lang("CrInfo"); ?></h3>
 			<br>
