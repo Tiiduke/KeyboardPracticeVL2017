@@ -15,6 +15,16 @@ redirect you to the login screen
 		if ($email == "") {
 			echo lang("YourPollsLogin");
 		} else {
+			if (empty($_GET['delete'])){
+			} else {
+				$pollid = $_GET['delete'];
+				$sqldelquestion = "DELETE FROM Questiontest WHERE PollID = '$pollid'";
+				$sqldelpoll = "DELETE FROM Polltest WHERE PollID = '$pollid'";
+				$conn->query($sqldelquestion);
+				$conn->query($sqldelpoll);
+				echo lang('PollDeleteSuccess');
+			}
+
 			$sqlpolls = "SELECT Polltest.PollID, Usertest.Email, Polltest.Category, Questiontest.Question FROM Usertest INNER JOIN (Polltest INNER JOIN Questiontest ON Polltest.PollID = Questiontest.PollID) ON Usertest.UserID = Polltest.UserID WHERE Usertest.Email = '$email' AND Usertest.Language = Questiontest.Language ORDER BY Polltest.PollID ASC";
 			$pollsresult = $conn->query($sqlpolls);
 			echo '<table class="table table-striped table-bordered table-hover">';
@@ -37,6 +47,8 @@ redirect you to the login screen
 				}
 
 			}
+			
+
 			$sqlanswers = "SELECT Polltest.PollID, Usertest.Email, Polltest.Category, Questiontest.Question, Answerstest.Answer FROM Usertest INNER JOIN ((Polltest INNER JOIN Answerstest ON Polltest.PollID = Answerstest.PollID) INNER JOIN Questiontest ON Polltest.PollID = Questiontest.PollID) ON Usertest.UserID = Polltest.UserID WHERE Usertest.Email = '$email' AND Usertest.Language = Questiontest.Language ORDER BY Polltest.PollID ASC";
 			$answersresult = $conn->query($sqlanswers);
 			echo '<table class="table table-striped table-bordered table-hover">';
@@ -65,3 +77,7 @@ redirect you to the login screen
 		}
 		?>
 </div>
+<form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" > 
+	<!--Delete-->
+	<input type="hidden" id="delete">
+</form>

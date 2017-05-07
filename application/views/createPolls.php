@@ -47,7 +47,7 @@ if (!empty($question) && !empty($option1) && !empty($option2)) {
 	
 	
 	$type = '1';
-	$category = 'Politics';
+	$category = '';
 	$privacy = '1';
 	$language = lang('Language');
 	$openstatus = '1';

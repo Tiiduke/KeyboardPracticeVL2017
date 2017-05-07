@@ -73,6 +73,7 @@ $lang['YourPollsIntro'] = 'Below are the polls you have created:';
 $lang['YourPollsNone'] = "You haven't created any polls yet.";
 $lang['YourPollsLogin'] = "You need to be logged in to view your polls.";
 $lang['Delete'] = "Delete";
+$lang['PollDeleteSuccess'] = "Poll successfully deleted!";
 
 //Create Polls
 $lang['CrNewPoll'] = 'Create a new poll';
