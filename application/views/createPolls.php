@@ -3,11 +3,24 @@
 $questionErr = $option1err = $option2err = $option3err = $option4err = $option5err = "";
 $question = $option1 = $option2 = $option3 = $option4 = $option5 = "";
 
+$email = $_SESSION['email'];
+include 'dbConnect.php';
+ini_set('display_errors','Off');
+
+$sqlselect = "SELECT UserID FROM Usertest WHERE Email='$email' LIMIT 1";
+$sqlresult = $conn->query($sqlselect);
+if ($sqlresult->num_rows > 0) {
+	while($row = $sqlresult->fetch_assoc()) {
+		$_SESSION["UserID"] = $row['UserID'];
+	}
+	$userid = $_SESSION["UserID"];
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (empty($_POST["question"])) {
 		$questionErr = lang("CrErr1");
 	} else {
-		$name = test_input($_POST["question"]);
+		$question = test_input($_POST["question"]);
 	}
 
 	if (empty($_POST["option1"]) || empty($_POST["option2"])) {
@@ -25,6 +38,45 @@ function test_input($data) {
 	//$data = stripslashes($data);
 	$data = htmlspecialchars($data);
 	return $data;
+}
+
+if (!empty($question) && !empty($option1) && !empty($option2)) {
+	echo lang('CreateSuccess');
+	$regdate = '0000-00-00';
+	$userid = $_SESSION['UserID'];
+	
+	
+	$type = '1';
+	$category = 'Politics';
+	$privacy = '1';
+	$language = lang('Language');
+	$openstatus = '1';
+
+	$sqlcreatepoll = "INSERT INTO Polltest (PollID, RegDate, UserID, Type, Category, Privacy, Language, OpenStatus) VALUES (NULL, '$regdate', '$userid', '$type', '$category', '$privacy', '$language', '$openstatus')";
+	
+	$conn->query($sqlcreatepoll);
+
+	$sqlpollid = "SELECT PollID FROM Polltest WHERE RegDate='$regdate' AND UserID='$userid' ORDER BY PollID DESC LIMIT 1";
+
+	$sqlpollidresult = $conn->query($sqlpollid);
+	if ($sqlpollidresult->num_rows > 0) {
+		while($row = $sqlpollidresult->fetch_assoc()) {
+			$_SESSION["PollID"] = $row['PollID'];
+		}
+		$pollid = $_SESSION["PollID"];
+	}
+
+	$sqlcreatequestion = "INSERT INTO Questiontest (QuestionID, PollID, Language, Option1, Option2, Option3, Option4, Option5, Question) VALUES (NULL, '$pollid', '$language', '$option1', '$option2', '$option3', '$option4', '$option5', '$question')";
+	$conn->query($sqlcreatequestion);
+	$conn->close();
+
+	$_POST["option1"] = NULL;
+	$_POST["option2"] = NULL;
+	$_POST["option3"] = NULL;
+	$_POST["option4"] = NULL;
+	$_POST["option5"] = NULL;
+	$_POST["question"] = NULL;
+		
 }
 ?>
 
@@ -83,7 +135,7 @@ function test_input($data) {
 <?php
 if(empty($questionErr) and empty($option1err))
 {
-	echo 'vist nii saab tingimused täidetud saatmiseks';
+	//echo 'vist nii saab tingimused täidetud saatmiseks';
 	//kuidagi nii andmed saata?
 	//kuskil ka kontrollib keeleväärtust, et õigesse lahtrisse saata?
 	/*

@@ -81,6 +81,7 @@ $lang['CrQuest'] = 'Question:';
 $lang['CrInfo'] = 'Enter options for possible answers (up to 5):';
 $lang['CrAns'] = 'Answer option ';
 $lang['Create'] = 'Create';
+$lang['CreateSuccess'] = 'Poll created successfully!';
 
 $lang['CrErr1'] = 'Question cannot be blank!';
 $lang['CrErr2'] = 'At least 2 answer options required!';

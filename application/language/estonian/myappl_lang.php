@@ -82,6 +82,7 @@ $lang['CrQuest'] = 'Küsimus:';
 $lang['CrInfo'] = 'Sisesta võimalikud vastused (kuni 5):';
 $lang['CrAns'] = 'Vastusevalik ';
 $lang['Create'] = 'Loo';
+$lang['CreateSuccess'] = 'Polli loomine õnnestus!';
 
 $lang['CrErr1'] = 'Küsimus ei saa olla tühi!';
 $lang['CrErr2'] = 'Vähemalt 2 vastusevalikut on vaja!';
