@@ -6,20 +6,20 @@
 	include 'dbConnect.php';
 	ini_set('display_errors','Off');
 	
-	$userid = $_SESSION["userid"];
+	$userid = $_SESSION["UserID"];
 	echo $userid;
 	/* Collecting user data from database to be used during the session */
 	$delaccount = "DELETE FROM Usertest WHERE UserID = '$userid'";
 	$delpass = "DELETE FROM Passwordtest WHERE UserPassID = '$userid'";
-	if ($conn->query($delaccount) === TRUE) {
-		$delaccountsuccess = lang("Success");
-	} else {
-		$delaccountsuccess = lang("Fail");
-	}
 	if ($conn->query($delpass) === TRUE) {
 		$delpasssuccess = lang("Success");
 	} else {
 		$delpasssuccess = lang("Fail");
+	}
+	if ($conn->query($delaccount) === TRUE) {
+		$delaccountsuccess = lang("Success");
+	} else {
+		$delaccountsuccess = lang("Fail");
 	}
 
 	echo lang("AccountDel");

@@ -91,7 +91,7 @@ if (!empty($userid) && !empty($question) && !empty($option1) && !empty($option2)
 		<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
 		<fieldset>
 		<legend><?php echo lang("CrNewPoll"); ?></legend>
-			<div id="lang">
+			<!--<div id="lang">
 				<label for="questLang"><?php echo lang("QuestLang"); ?></label> 
 				<select id="questLang">
 				<option value="Eng"><?php echo lang("English"); ?></option>
@@ -99,7 +99,7 @@ if (!empty($userid) && !empty($question) && !empty($option1) && !empty($option2)
 				</select>
 			</div>
 			<div class="valError"></div>
-			<br>
+			<br>-->
 			<label for="question"><?php echo lang("CrQuest"); ?></label>
 			<input type="text" id="question" name="question" class="form-control" value="<?= isset($_POST['question']) ? $_POST['question'] : ''; ?>">
 			<span class="error"> <?php echo $questionErr;?></span>
