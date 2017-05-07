@@ -80,10 +80,12 @@ $lang['PollDeleteSuccess'] = "Poll edukalt kustutatud!";
 $lang['CrNewPoll'] = 'Loo uus poll';
 $lang['QuestLang'] = 'Küsimuse keel:';
 $lang['CrQuest'] = 'Küsimus:';
+$lang['CrCategory'] = 'Kategooria:';
 $lang['CrInfo'] = 'Sisesta võimalikud vastused (kuni 5):';
 $lang['CrAns'] = 'Vastusevalik ';
 $lang['Create'] = 'Loo';
 $lang['CreateSuccess'] = 'Polli loomine õnnestus!';
+$lang['CreatePollsLogin'] = "Pollide loomiseks pead olema sisse logitud.";
 
 $lang['CrErr1'] = 'Küsimus ei saa olla tühi!';
 $lang['CrErr2'] = 'Vähemalt 2 vastusevalikut on vaja!';

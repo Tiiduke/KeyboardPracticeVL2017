@@ -79,10 +79,12 @@ $lang['PollDeleteSuccess'] = "Poll successfully deleted!";
 $lang['CrNewPoll'] = 'Create a new poll';
 $lang['QuestLang'] = 'Question language:';
 $lang['CrQuest'] = 'Question:';
+$lang['CrCategory'] = 'Category:';
 $lang['CrInfo'] = 'Enter options for possible answers (up to 5):';
 $lang['CrAns'] = 'Answer option ';
 $lang['Create'] = 'Create';
 $lang['CreateSuccess'] = 'Poll created successfully!';
+$lang['CreatePollsLogin'] = "You need to be logged in to create polls.";
 
 $lang['CrErr1'] = 'Question cannot be blank!';
 $lang['CrErr2'] = 'At least 2 answer options required!';
