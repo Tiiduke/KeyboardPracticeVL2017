@@ -142,13 +142,13 @@ function test_input($data) {
 			<span class="error"> <?php echo $birthdateErr;?></span>
 			<br>
 			<!--Language-->
-			<label for="reglanguage"><?php echo lang("RegLanguage"); ?></label> 
+			<!--<label for="reglanguage"><?php echo lang("RegLanguage"); ?></label> 
 			<select id="reglanguage">
 				<option value="Eng" selected="selected"><?php echo lang("English"); ?></option>
 				<option value="Est"><?php echo lang("Estonian"); ?></option>
 			</select>
 			<br>
-			<br>
+			<br>-->
 			<!--Email-->
 			<label for="regemail"><?php echo lang("RegEmail"); ?></label>
 			<div class="tooltip"> (?)
