@@ -57,6 +57,9 @@ $lang['SearchPolAc'] = 'Active';
 $lang['SearchPolCl'] = 'Closed';
 $lang['SearchPolAl'] = 'All';
 $lang['SearchSearch'] = 'Search';
+$lang['Results'] = 'Results:';
+$lang['NoResults'] = 'No results found.';
+
 
 //Find polls category subs
 $lang['Category1'] = 'Politics';
@@ -128,3 +131,4 @@ $lang['Country'] = 'ESTONIA';
 //Languages
 $lang['English'] = 'English';
 $lang['Estonian'] = 'Estonian';
+$lang['Language'] = 'Eng';

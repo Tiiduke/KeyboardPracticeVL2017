@@ -6,7 +6,7 @@ a thing, therefore, this needs to eventually be implemented, using either
 JavaScript, or PHP, whichever strikes your fancy more.
 -->
 
-<form action= "/action_page.php"> <!--Needs an actual separate webpage for this-->
+<form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> <!--Needs an actual separate webpage for this-->
 <fieldset>
 <legend><?php echo lang("SearchT"); ?></legend>
 
@@ -81,3 +81,41 @@ JavaScript, or PHP, whichever strikes your fancy more.
 	
 	<input type="submit" value=<?php echo lang("SearchSearch"); ?>>
 </form>
+<br>
+<?php
+	include 'dbConnect.php';
+	$searchword = $_GET["keyword"];
+	$searchauthor = $_GET["author"];
+	if ($_GET["pollAge"] == '1') {
+		$searchpollage = 'DESC';
+	} else {
+		$searchpollage = 'ASC';
+	}
+	$searchlanguage = lang('Language');
+	
+	$sqlsearch = "SELECT Polltest.PollID, Usertest.Email, Questiontest.Question, Polltest.RegDate
+FROM Usertest INNER JOIN (Polltest INNER JOIN Questiontest ON Polltest.PollID = Questiontest.PollID) ON Usertest.UserID = Polltest.UserID WHERE Questiontest.Language = '$searchlanguage' AND LOWER(Question) LIKE LOWER('%$searchword%') AND LOWER(Email) LIKE LOWER('%$searchauthor%') ORDER BY RegDate $searchpollage";
+	$searchresult = $conn->query($sqlsearch);
+	echo '<table class="table table-striped table-bordered table-hover">';
+	echo "<tr><th>PollID:</th><th>Email:</th><th>Question:</th><th>RegDate:</th></tr>"; 
+	if ($searchresult->num_rows > 0) {
+		echo lang('Results');
+		// output data of each row
+		while($row = $searchresult->fetch_assoc()) {
+			echo "<tr><td>"; 
+			echo $row['PollID'];
+			echo "</td><td>";   
+			echo $row['Email'];
+			echo "</td><td>";    
+			echo $row['Question'];
+			echo "</td><td>";    
+			echo $row['RegDate'];
+			echo "</td></tr>";  
+		}
+	} elseif ($searchresult->num_rows == 0){
+		echo lang('NoResults');
+	}
+	echo '</table>';
+	$conn->close();
+	
+?>

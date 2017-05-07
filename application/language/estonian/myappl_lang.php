@@ -58,6 +58,9 @@ $lang['SearchPolAc'] = 'Aktiivne';
 $lang['SearchPolCl'] = 'Suletud';
 $lang['SearchPolAl'] = 'Kõik';
 $lang['SearchSearch'] = 'Otsi';
+$lang['Results'] = 'Tulemused:';
+$lang['NoResults'] = 'Ei leitud ühtegi tulemust.';
+
 
 //Find polls category subs
 $lang['Category1'] = 'Poliitika';
@@ -127,3 +130,4 @@ $lang['Country'] = 'EESTI';
 //Languages
 $lang['English'] = 'inglise';
 $lang['Estonian'] = 'eesti';
+$lang['Language'] = 'Est';
