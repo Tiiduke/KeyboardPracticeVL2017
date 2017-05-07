@@ -89,7 +89,6 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 				?>
 				
 
-				</li>
 				</ul>
 			</div>
 	</nav>
