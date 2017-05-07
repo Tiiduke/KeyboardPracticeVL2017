@@ -130,12 +130,12 @@ function test_input($data) {
 			<span class="error"> <?php echo $lastnameErr;?></span>
 			<br>
 			<!--Gender-->
-			<?php echo lang("RegGender"); ?> <input type="radio" name="reggender" id="male" value="1" checked>
+			<!--<?php echo lang("RegGender"); ?> <input type="radio" name="reggender" id="male" value="1" checked>
 			<label for="male"><?php echo lang("RegMale"); ?></label>
 			<input type="radio" name="reggender" onclick="check();" id="female" value="2">
 			<label for="female"><?php echo lang("RegFemale"); ?></label>
 			<br>
-			<br>
+			<br>-->
 			<!--Birthdate-->
 			<label for="regbirthdate"><?php echo lang("RegBirthdate"); ?></label>
 			<input type="text" id="regbirthdate" name="regbirthdate" class="form-control" value="<?= isset($_POST['regbirthdate']) ? $_POST['regbirthdate'] : ''; ?>">
