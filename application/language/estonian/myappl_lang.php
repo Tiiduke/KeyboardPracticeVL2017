@@ -7,6 +7,7 @@ $lang['siteMapIn'] = 'Külastatavad leheküljed:';
 $lang['menu_mainpage'] = 'Avalehekülg';
 $lang['menu_mainFP'] = 'Leia Polle';
 $lang['menu_mainYP'] = 'Sinu Pollid';
+$lang['menu_mainAP'] = 'Vasta Pollidele';
 $lang['menu_mainCP'] = 'Loo Poll';
 $lang['Account'] = 'Konto';
 $lang['Login'] = 'Logi sisse';
@@ -60,6 +61,11 @@ $lang['SearchPolAl'] = 'Kõik';
 $lang['SearchSearch'] = 'Otsi';
 $lang['Results'] = 'Tulemused:';
 $lang['NoResults'] = 'Ei leitud ühtegi tulemust.';
+
+
+//Answer Polls
+$lang['AnswerPollsLogin'] = "Pollide vastamiseks pead olema sisse logitud.";
+$lang['AnswerThanks'] = "Täname! Teie vastus on salvestatud.";
 
 
 //Find polls category subs

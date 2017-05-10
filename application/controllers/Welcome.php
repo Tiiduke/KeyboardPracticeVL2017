@@ -75,6 +75,17 @@ class Welcome extends CI_Controller {
 		$this->load->view('yourPolls');
 		$this->load->view('footer');
 	}
+	public function answerPolls() //probably needs to be logged in as well
+	{
+		if(!isset($_SESSION)) { 
+			session_start();
+		}		
+		$this->lang->load('myappl', $this->session->userdata('site_lang'));
+		$title['title'] = lang('menu_mainAP');
+		$this->load->view('header', $title);
+		$this->load->view('answerPolls');
+		$this->load->view('footer');
+	}
 	public function account()//needs login before proper usage
 	{
 		if(!isset($_SESSION)) { 

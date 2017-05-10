@@ -7,6 +7,7 @@ $lang['siteMapIn'] = 'Visitable webpages:';
 $lang['menu_mainpage'] = 'Home';
 $lang['menu_mainFP'] = 'Find Polls';
 $lang['menu_mainYP'] = 'Your Polls';
+$lang['menu_mainAP'] = 'Answer Polls';
 $lang['menu_mainCP'] = 'Create Polls';
 $lang['Account'] = 'Account';
 $lang['Login'] = 'Log in';
@@ -59,6 +60,11 @@ $lang['SearchPolAl'] = 'All';
 $lang['SearchSearch'] = 'Search';
 $lang['Results'] = 'Results:';
 $lang['NoResults'] = 'No results found.';
+
+
+//Answer Polls
+$lang['AnswerPollsLogin'] = "You need to be logged in to answer polls.";
+$lang['AnswerThanks'] = "Thank you! Your answer has been saved.";
 
 
 //Find polls category subs

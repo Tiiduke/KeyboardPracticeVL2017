@@ -107,7 +107,7 @@ FROM Usertest INNER JOIN (Polltest INNER JOIN Questiontest ON Polltest.PollID = 
 			echo "</td><td>";   
 			echo $row['Email'];
 			echo "</td><td>";    
-			echo $row['Question'];
+			echo '<a href=" ' . base_url() . 'index.php/welcome/answerPolls?pollid=' . $row['PollID'] . ' ">' . $row['Question'] . '</a>';
 			echo "</td><td>";    
 			echo $row['RegDate'];
 			echo "</td></tr>";  
