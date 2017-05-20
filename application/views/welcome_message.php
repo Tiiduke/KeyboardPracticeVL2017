@@ -1,7 +1,7 @@
 <div id="container">
-	<h1><?php echo lang("WelcomeToPollerina"); ?></h1>
-	<p><?php echo lang("WelcomeText1"); ?></p>
-	<p><?php echo lang("WelcomeText2"); ?></p>
+	<h1 id = "WelcomeT"><?php echo lang("WelcomeToPollerina"); ?></h1>
+	<p id="Welcome1"><?php echo lang("WelcomeText1"); ?></p>
+	<p id ="Welcome2"><?php echo lang("WelcomeText2"); ?></p>
 
 <?php	
 	include 'dbConnect.php';
@@ -21,7 +21,8 @@
 			$_SESSION["pollcount"] = $row['pollcount'];
 		}
 	}
-	echo lang('UsercountText') . $_SESSION["usercount"] . lang('PollcountText') . $_SESSION["pollcount"] . ".";
+	$registeredResults = lang('UsercountText') . $_SESSION["usercount"] . lang('PollcountText') . $_SESSION["pollcount"] . ".";
+	echo $registeredResults;
 	$conn->close();
 ?>
 </div>

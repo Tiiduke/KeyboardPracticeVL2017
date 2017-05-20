@@ -25,10 +25,10 @@ JavaScript, or PHP, whichever strikes your fancy more.
 	-->
 	
 	<div id="nameEntry">
-		<label for="keyword"><?php echo lang("SearchKey"); ?></label>
-		<input type="text" id="keyword" name="keyword" value=""><br>
-		<label for="author"><?php echo lang("SearchAuth"); ?></label>
-		<input type="text" id="author" name="author" value=""><br><br>
+		<div class="kwLeft"><label for="keyword"><?php echo lang("SearchKey"); ?></label></div>
+		<div class="kwRight"><input type="text" id="keyword" name="keyword" value=""><br></div>
+		<div class="aLeft"><label for="author"><?php echo lang("SearchAuth"); ?></label> </div>
+		<div class="aRight"><input type="text" id="author" name="author" value=""></div><br><br>
 	</div>
 	
 	

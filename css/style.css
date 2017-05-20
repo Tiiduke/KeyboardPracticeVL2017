@@ -72,3 +72,47 @@
     visibility: visible;
     opacity: 1;
 }
+
+
+/*Text alignments*/
+#WelcomeT {
+    margin-left: 20px;
+}
+#Welcome1 {
+    margin-left: 20px;
+}
+#Welcome2 {
+    margin-left: 20px;
+}
+/*$registeredResults {
+	margin-left 20px;
+}*/
+
+#nameEntry {
+	margin-left: 20px;
+}
+
+/*.kwLeft {
+	width: 20%;
+    float: left;
+    text-align: right;
+}
+.kwRight {
+	width: 65%;
+    margin-left: 10px;
+    float:left;
+}
+.aLeft {
+	width: 30%;
+    float: left;
+    text-align: right;
+}
+.aRight {
+	width: 65%;
+    margin-left: 10px;
+    float:left;
+}*/
+
+
+
+
