@@ -19,14 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastname = test_input($_POST["reglastname"]);
   }
   
-/*  echo '<script type="text/javascript">';
-  $gender = echo 'getGender();'
-  echo '</script>';
-  
-  if ($gender() == null) {
-    $genderErr = lang("RegGenderErr");
-  }*/
-
   if (empty($_POST["regemail"])) {
     $emailErr = lang("RegEmailErr");
   } else {
@@ -56,14 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	  }
 	  
   }
-   /* 
 
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
-   */
   if (!empty($firstname) && !empty($lastname) && !empty($email) && !empty($birthdate) && !empty($pass) && !empty($rPass)) {
 	include 'dbConnect.php';
 	ini_set('display_errors','Off');
@@ -100,7 +85,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	echo $usersuccess;
 	echo lang('AccountCreate2');
 	echo $passsuccess;
-	//echo "$firstname $lastname $email $birthdate $language $pass $rPass";
+	if ($usersuccess == lang("Success") && $passsuccess == lang("Success")) {
+		header('Location: '. base_url() .'index.php/welcome/createPolls/');
+	}
   }
   
 }
@@ -129,26 +116,11 @@ function test_input($data) {
 			<input type="text" id="reglastname" name="reglastname" class="form-control" value="<?= isset($_POST['reglastname']) ? $_POST['reglastname'] : ''; ?>">
 			<span class="error"> <?php echo $lastnameErr;?></span>
 			<br>
-			<!--Gender-->
-			<!--<?php echo lang("RegGender"); ?> <input type="radio" name="reggender" id="male" value="1" checked>
-			<label for="male"><?php echo lang("RegMale"); ?></label>
-			<input type="radio" name="reggender" onclick="check();" id="female" value="2">
-			<label for="female"><?php echo lang("RegFemale"); ?></label>
-			<br>
-			<br>-->
 			<!--Birthdate-->
 			<label for="regbirthdate"><?php echo lang("RegBirthdate"); ?></label>
 			<input type="text" id="regbirthdate" name="regbirthdate" class="form-control" value="<?= isset($_POST['regbirthdate']) ? $_POST['regbirthdate'] : ''; ?>">
 			<span class="error"> <?php echo $birthdateErr;?></span>
 			<br>
-			<!--Language-->
-			<!--<label for="reglanguage"><?php echo lang("RegLanguage"); ?></label> 
-			<select id="reglanguage">
-				<option value="Eng" selected="selected"><?php echo lang("English"); ?></option>
-				<option value="Est"><?php echo lang("Estonian"); ?></option>
-			</select>
-			<br>
-			<br>-->
 			<!--Email-->
 			<label for="regemail"><?php echo lang("RegEmail"); ?></label>
 			<div class="tooltip"> (?)
@@ -165,16 +137,10 @@ function test_input($data) {
 			<input type="password" id="pass" name="pass" class="form-control">
 			<span class="error"> <?php echo $passErr;?></span>
 			<br>
-			<br>
 			<!--Password 2-->
 			<label for="rPass"><?php echo lang("RegRepPass"); ?></label>
 			<input type="password" id="rPass" name="rPass" class="form-control">
 			<span class="error"> <?php echo $rPassErr;?></span>
-			<br>
-			<br>
-			<!--Terms and conditions-->
-			<input name="kasutajatingimus" id="termsCheckbox" value="accept" type="checkbox"> 
-			<label for="termsCheckbox"><?php echo lang("RegTerms"); ?></label>
 			<br>
 			<br>
 			</fieldset>

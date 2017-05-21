@@ -68,8 +68,6 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 								echo '</fieldset>';
 								echo '<fieldset id="actions">';
 									echo '<input type="submit" id="submit" value="Log in">';
-									echo '<label for="checkbox">' . lang("keepLog") . '</label>';
-									echo '<input id="checkbox" type="checkbox" checked="checked">';
 								echo '</fieldset>';
 							echo '</form>';
 						echo '</div>';                     
@@ -78,12 +76,7 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 						echo '<a href="'. base_url() . 'index.php/welcome/signUp">'. lang("SignUp") . '</a>';
 					}
 					if (isset($_SESSION["firstname"])) {
-						//echo '<li id="logout">';
-						//echo '<input type="submit" id="logout" value=' . lang("LogOut") . '>';
-						//echo '<a id="login-trigger" href="#">';
 						echo '<li><a href=" ' . base_url() . 'index.php/welcome/logOut">' . lang("LogOut") . '</a></li>';
-							//echo lang("LogOut");
-						//echo '</a>';
 						
 					}
 				?>
@@ -94,13 +87,6 @@ $_SESSION['current_page'] = $_SERVER['REQUEST_URI'];
 	</nav>
 	
 	<?php
-		/*		SOMETHING LIKE THIS NEEDS TO BE IMPLEMENTED SOMEWHERE TO LOG OUT				
-		//log out code
-						if (isset($_POST['logout'])) {
-							session_unset();
-							session_start();
-						}
-		*/
 		include 'dbConnect.php';
 		
 		ini_set('display_errors','Off');

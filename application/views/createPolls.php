@@ -112,15 +112,6 @@ if ($email == "") {
 				$option5 = test_input($_POST["option5"]);
 			}
 		} 
-		// check that at least two options have been entered
-		/*if (empty($_POST["option1"]) || empty($_POST["option2"])) {
-			$option1err = lang("CrErr2");
-		} elseif (test_input($_POST["option1"]) == test_input($_POST["option2"])) {
-			$option1err = lang("CrErr3");
-		} else {
-			$option1 = test_input($_POST["option1"]);
-			$option2 = test_input($_POST["option2"]);
-		}*/
 	}
 
 
@@ -258,16 +249,6 @@ if ($email == "") {
 			echo '</form>';
 		echo '</div>';
 	echo '</div>';
-}
-if(empty($questionErr) and empty($option1err))
-{
-	//echo 'vist nii saab tingimused täidetud saatmiseks';
-	//kuidagi nii andmed saata?
-	//kuskil ka kontrollib keeleväärtust, et õigesse lahtrisse saata?
-	/*
-	$sql = mysql_query("insert into __nimi__ values __nimi__");
-	$sql = mysql_query("insert into __nimi__ values __nimi__");
-	*/
 }
 
 ?>
