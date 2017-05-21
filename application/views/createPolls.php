@@ -7,7 +7,7 @@ $email = $_SESSION['email'];
 $userid = $_SESSION['UserID'];
 
 if ($email == "") {
-	echo lang("CreatePollsLogin");
+	echo '<div id="beLoggedIn2">'.lang("CreatePollsLogin").'</div>';
 }
 include 'dbConnect.php';
 ini_set('display_errors','Off');

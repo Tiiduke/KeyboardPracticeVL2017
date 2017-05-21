@@ -75,45 +75,23 @@
 
 
 /*Text alignments*/
-#WelcomeT {
+#WelcomeT, #Welcome1, #Welcome2, #registrations {
     margin-left: 1%;
 }
-#Welcome1 {
-    margin-left: 1%;
-}
-#Welcome2 {
-    margin-left: 1%;
-}
-/*$registeredResults {
-	margin-left 20px;
-}*/
 
-#nameEntry {
+#nameEntry, #SearchT, #ageFilter, #newOrOld, #searchB {
 	margin-left: 1%;
 }
-#SearchT {
-	margin-left: 1%;
-}
-
-#ageFilter {
-	margin-left: 1%;
-}
-#newOrOld {
-	margin-left: 1%;
-}
-
-#searchB {
-	margin-left: 1%;
-}
-#registrations {
-	margin-left: 1%;
-}
-
-
-
 
 #fullTable {
 	width: 98%;
+	margin-left: 1%;
+}
+#beLoggedIn1, #beLoggedIn2, #beLoggedIn3 {
+	margin-left: 1%;
+}
+
+#aboutingAbout, #contactingCons {
 	margin-left: 1%;
 }
 

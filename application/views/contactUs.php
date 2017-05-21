@@ -1,4 +1,4 @@
-<div id="container">
+<div id="contactingCons">
 	<h1><?php echo lang("Contact"); ?>:</h1>
 	Pollerina<br>
 	Liivi 2<br>

@@ -13,7 +13,8 @@ redirect you to the login screen
 		include 'dbConnect.php';
 		
 		if ($email == "") {
-			echo lang("YourPollsLogin");
+			echo '<div id="beLoggedIn1">'.lang("YourPollsLogin").'</div>';
+			
 		} else {
 			if (empty($_GET['delete'])){
 			} else {
