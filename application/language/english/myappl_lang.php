@@ -132,6 +132,7 @@ $lang['RegLanguage'] = 'Language: ';
 $lang['RegEmail'] = 'Email: ';
 $lang['RegEmailTooltip'] = 'The e-mail address used for registration will be used as the username for logging in';
 $lang['RegEmailErr'] = 'An email is required';
+$lang['RegEmailErr2'] = 'An account with this e-mail address has already been registered';
 $lang['RegPass'] = 'Password: ';
 $lang['RegPassTooltip'] = 'A good password is at least 8 characters in length, contains numbers as well as small and capital letters';
 $lang['RegPassErr'] = 'A password is required';

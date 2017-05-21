@@ -129,6 +129,7 @@ $lang['RegLanguage'] = 'Keel: ';
 $lang['RegEmail'] = 'Meiliaadress: ';
 $lang['RegEmailTooltip'] = 'Registreerimisel kasutatud meiliaadressi kasutatakse edaspidi kasutajanimena sisselogimisel';
 $lang['RegEmailErr'] = 'Meiliaadress on vaja lisada';
+$lang['RegEmailErr2'] = 'Sellise meiliaadressiga konto on juba registreeritud';
 $lang['RegPass'] = 'Parool: ';
 $lang['RegPassTooltip'] = 'Hea parool on vähemalt 8 tähemärki pikk, sisaldab numbreid ning suuri ja väikseid tähti';
 $lang['RegPassErr'] = 'Parool on vaja lisada';

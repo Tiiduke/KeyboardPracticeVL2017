@@ -22,7 +22,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["regemail"])) {
     $emailErr = lang("RegEmailErr");
   } else {
-    $email = test_input($_POST["regemail"]);
+	include 'dbConnect.php';
+	ini_set('display_errors','Off');
+	$regemail = test_input($_POST['regemail']);
+   	$sqlcheckemail = "SELECT Email FROM Usertest WHERE Email='$regemail' LIMIT 1";
+	$sqlcheckemailresult = $conn->query($sqlcheckemail);
+	if ($sqlcheckemailresult->num_rows > 0) {
+		$emailErr = lang("RegEmailErr2");
+		$conn->close();
+	} else {
+		$email = test_input($_POST["regemail"]);
+		$conn->close();
+	}
   }
   
   if (empty($_POST["regbirthdate"])) {
