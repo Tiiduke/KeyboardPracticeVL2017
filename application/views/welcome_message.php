@@ -3,6 +3,7 @@
 	<p id="Welcome1"><?php echo lang("WelcomeText1"); ?></p>
 	<p id ="Welcome2"><?php echo lang("WelcomeText2"); ?></p>
 
+<div id="registrations">
 <?php	
 	include 'dbConnect.php';
 	ini_set('display_errors','Off');
@@ -25,4 +26,5 @@
 	echo $registeredResults;
 	$conn->close();
 ?>
+</div>
 </div>

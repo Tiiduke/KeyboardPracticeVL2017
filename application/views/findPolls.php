@@ -8,7 +8,7 @@ JavaScript, or PHP, whichever strikes your fancy more.
 
 <form method="GET" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> <!--Needs an actual separate webpage for this-->
 <fieldset>
-<legend><?php echo lang("SearchT"); ?></legend>
+<legend id = "SearchT"><?php echo lang("SearchT"); ?></legend>
 
 	<!--
 	Võibolla asendada kahe sisendi asemel üks sisend ja dropdown, kus saab valida, kas autor või keyword,
@@ -28,11 +28,9 @@ JavaScript, or PHP, whichever strikes your fancy more.
 		<div class="kwLeft"><label for="keyword"><?php echo lang("SearchKey"); ?></label></div>
 		<div class="kwRight"><input type="text" id="keyword" name="keyword" value=""><br></div>
 		<div class="aLeft"><label for="author"><?php echo lang("SearchAuth"); ?></label> </div>
-		<div class="aRight"><input type="text" id="author" name="author" value=""></div><br><br>
+		<div class="aRight"><input type="text" id="author" name="author" value=""></div><br>
 	</div>
 	
-	
-
 	<!--WHERE __column?__ BETWEEN __date1__ AND __date2__-->
 	<div id="ageFilter">
 		<link rel="stylesheet" href="<?php echo base_url(); ?>css/jquery-ui.css" type="text/css" />
@@ -41,20 +39,24 @@ JavaScript, or PHP, whichever strikes your fancy more.
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script type="text/javascript" src="../../js/datepick.js">
 		</script>
-		<?php echo lang("SearchFilAge"); ?> <label for="from"><?php echo lang("SearchAgeFr"); ?> </label>
+		<div id="Filter"><?php echo lang("SearchFilAge"); ?></div> 
+		<label for="from"><?php echo lang("SearchAgeFr"); ?> </label>
 		<input type="text" id="from" name="from">
 		<label for="to"><?php echo lang("SearchAgeTo"); ?></label>
 		<input type="text" id="to" name="to">
 		 
 	</div>
+	<br>
 	
 	<!--ORDER BY __column__ ASC|DESC-->
 	<div id="newOrOld">
-		<?php echo lang("SearchFilTim"); ?> <input type="radio" name="pollAge" id="newer" value="1" checked="checked">
+		<div id="separate"><?php echo lang("SearchFilTim"); ?> </div>
+		<input type="radio" name="pollAge" id="newer" value="1" checked="checked">
 		<label for="newer"><?php echo lang("SearchTimNew"); ?></label>
 		<input type="radio" name="pollAge" id="older" value="2">
 		<label for="older"><?php echo lang("SearchTimOld"); ?></label>
 	</div>
+	<br>
 	
 	<!--Pakun et see on ebavajalik-->
 	<!--
@@ -79,9 +81,10 @@ JavaScript, or PHP, whichever strikes your fancy more.
 	
 	</fieldset>
 	
-	<input type="submit" value=<?php echo lang("SearchSearch"); ?>>
+	<input id = "searchB" type="submit" class="btn btn-primary btn-md" value=<?php echo lang("SearchSearch"); ?>>
 </form>
 <br>
+<div id="fullTable">
 <?php
 	include 'dbConnect.php';
 	$searchword = $_GET["keyword"];
@@ -119,3 +122,4 @@ FROM Usertest INNER JOIN (Polltest INNER JOIN Questiontest ON Polltest.PollID = 
 	$conn->close();
 	
 ?>
+</div>

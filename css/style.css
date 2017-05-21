@@ -76,42 +76,46 @@
 
 /*Text alignments*/
 #WelcomeT {
-    margin-left: 20px;
+    margin-left: 1%;
 }
 #Welcome1 {
-    margin-left: 20px;
+    margin-left: 1%;
 }
 #Welcome2 {
-    margin-left: 20px;
+    margin-left: 1%;
 }
 /*$registeredResults {
 	margin-left 20px;
 }*/
 
 #nameEntry {
-	margin-left: 20px;
+	margin-left: 1%;
+}
+#SearchT {
+	margin-left: 1%;
 }
 
-/*.kwLeft {
-	width: 20%;
-    float: left;
-    text-align: right;
+#ageFilter {
+	margin-left: 1%;
 }
-.kwRight {
-	width: 65%;
-    margin-left: 10px;
-    float:left;
+#newOrOld {
+	margin-left: 1%;
 }
-.aLeft {
-	width: 30%;
-    float: left;
-    text-align: right;
+
+#searchB {
+	margin-left: 1%;
 }
-.aRight {
-	width: 65%;
-    margin-left: 10px;
-    float:left;
-}*/
+#registrations {
+	margin-left: 1%;
+}
+
+
+
+
+#fullTable {
+	width: 98%;
+	margin-left: 1%;
+}
 
 
 
