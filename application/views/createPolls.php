@@ -1,4 +1,8 @@
 <?php 
+if(!isset($_SESSION)) { 
+	session_start();
+}
+
 //build up variables for showing errors in case some data is incorrect or not filled
 $questionErr = $option1err = $option2err = $option3err = $option4err = $option5err = "";
 $question = $option1 = $option2 = $option3 = $option4 = $option5 = "";
@@ -8,6 +12,13 @@ $userid = $_SESSION['UserID'];
 
 include 'dbConnect.php';
 ini_set('display_errors','Off');
+
+function test_input($data) {
+	$data = trim($data);
+	//$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
+}
 
 if ($email == "") {
 	echo '<div id="beLoggedIn2">'.lang("CreatePollsLogin").'</div>';
@@ -27,23 +38,88 @@ if ($email == "") {
 		} else {
 			$question = test_input($_POST["question"]);
 		}
-
-		if (empty($_POST["option1"]) || empty($_POST["option2"])) {
+		
+		//check if any option identical to another
+		if (!empty($_POST["option1"]) && !empty($_POST["option2"]) && test_input($_POST["option1"]) == test_input($_POST["option2"])) {
+			$option1err = lang("CrErr3");
+			$option2err = lang("CrErr3");
+		}
+		if (!empty($_POST["option1"]) && !empty($_POST["option3"]) && test_input($_POST["option1"]) == test_input($_POST["option3"])) {
+			$option1err = lang("CrErr3");
+			$option3err = lang("CrErr3");
+		}
+		if (!empty($_POST["option1"]) && !empty($_POST["option4"]) && test_input($_POST["option1"]) == test_input($_POST["option4"])) {
+			$option1err = lang("CrErr3");
+			$option4err = lang("CrErr3");
+		}
+		if (!empty($_POST["option1"]) && !empty($_POST["option5"]) && test_input($_POST["option1"]) == test_input($_POST["option5"])) {
+			$option1err = lang("CrErr3");
+			$option5err = lang("CrErr3");
+		}
+		if (!empty($_POST["option2"]) && !empty($_POST["option3"]) && test_input($_POST["option2"]) == test_input($_POST["option3"])) {
+			$option2err = lang("CrErr3");
+			$option3err = lang("CrErr3");
+		}
+		if (!empty($_POST["option2"]) && !empty($_POST["option4"]) && test_input($_POST["option2"]) == test_input($_POST["option4"])) {
+			$option2err = lang("CrErr3");
+			$option4err = lang("CrErr3");
+		}
+		if (!empty($_POST["option2"]) && !empty($_POST["option5"]) && test_input($_POST["option2"]) == test_input($_POST["option5"])) {
+			$option2err = lang("CrErr3");
+			$option5err = lang("CrErr3");
+		}
+		if (!empty($_POST["option3"]) && !empty($_POST["option4"]) && test_input($_POST["option3"]) == test_input($_POST["option4"])) {
+			$option3err = lang("CrErr3");
+			$option4err = lang("CrErr3");
+		}
+		if (!empty($_POST["option3"]) && !empty($_POST["option5"]) && test_input($_POST["option3"]) == test_input($_POST["option5"])) {
+			$option3err = lang("CrErr3");
+			$option5err = lang("CrErr3");
+		}
+		if (!empty($_POST["option4"]) && !empty($_POST["option5"]) && test_input($_POST["option4"]) == test_input($_POST["option5"])) {
+			$option4err = lang("CrErr3");
+			$option5err = lang("CrErr3");
+		}
+		
+		//check if at least two options and filled in proper order
+		if (empty($_POST["option1"]) && !empty($_POST["option2"])) {
+			$option1err = lang("CrErr4");
+		} elseif (empty($_POST["option2"]) && !empty($_POST["option3"])) {
+			$option2err = lang("CrErr4");
+		} elseif (empty($_POST["option3"]) && !empty($_POST["option4"])) {
+			$option3err = lang("CrErr4");
+		} elseif (empty($_POST["option4"]) && !empty($_POST["option5"])) {
+			$option4err = lang("CrErr4");
+		} elseif (empty($_POST["option1"]) || empty($_POST["option2"])) {
+			$option1err = lang("CrErr2");
+		} else {
+			if (!empty($_POST["option1"])) {
+				$option1 = test_input($_POST["option1"]);
+			}
+			if (!empty($_POST["option2"])) {
+				$option2 = test_input($_POST["option2"]);
+			}
+			if (!empty($_POST["option3"])) {
+				$option3 = test_input($_POST["option3"]);
+			}
+			if (!empty($_POST["option4"])) {
+				$option4 = test_input($_POST["option4"]);
+			}
+			if (!empty($_POST["option5"])) {
+				$option5 = test_input($_POST["option5"]);
+			}
+		} 
+		// check that at least two options have been entered
+		/*if (empty($_POST["option1"]) || empty($_POST["option2"])) {
 			$option1err = lang("CrErr2");
 		} elseif (test_input($_POST["option1"]) == test_input($_POST["option2"])) {
 			$option1err = lang("CrErr3");
 		} else {
 			$option1 = test_input($_POST["option1"]);
 			$option2 = test_input($_POST["option2"]);
-		}
+		}*/
 	}
 
-	function test_input($data) {
-		$data = trim($data);
-		//$data = stripslashes($data);
-		$data = htmlspecialchars($data);
-		return $data;
-	}
 
 	if (!empty($userid) && !empty($question) && !empty($option1) && !empty($option2)) {
 		echo lang('CreateSuccess');
@@ -94,6 +170,7 @@ if ($email == "") {
 			echo '<legend>';
 			echo lang("CrNewPoll");
 			echo '</legend>';
+				//Question
 				echo '<label for="question">';
 				echo lang("CrQuest");
 				echo '</label>';
@@ -104,6 +181,7 @@ if ($email == "") {
 				echo $questionErr;
 				echo '</span>';
 				echo '<br>';
+				//Category
 				echo '<label for="category">';
 				echo lang("CrCategory");
 				echo '</label>';
@@ -115,6 +193,7 @@ if ($email == "") {
 				echo lang("CrInfo");
 				echo '</h3>';
 				echo '<br>';
+				//Option1
 				echo '<label for="option1">';
 				echo lang("CrAns");
 				echo '1:</label>';
@@ -125,6 +204,7 @@ if ($email == "") {
 				echo $option1err;
 				echo '</span>';
 				echo '<br>';
+				//Option2
 				echo '<label for="option2">';
 				echo lang("CrAns");
 				echo '2:</label>';
@@ -135,6 +215,7 @@ if ($email == "") {
 				echo $option2err;
 				echo '</span>';
 				echo '<br>';
+				//Option3
 				echo '<label for="option3">';
 				echo lang("CrAns");
 				echo '3:</label>';
@@ -145,6 +226,7 @@ if ($email == "") {
 				echo $option3err;
 				echo '</span>';
 				echo '<br>';
+				//Option4
 				echo '<label for="option4">';
 				echo lang("CrAns");
 				echo '4:</label>';
@@ -155,6 +237,7 @@ if ($email == "") {
 				echo $option4err;
 				echo '</span>';
 				echo '<br>';
+				//Option5
 				echo '<label for="option5">';
 				echo lang("CrAns");
 				echo '5:</label>';
@@ -166,9 +249,9 @@ if ($email == "") {
 				echo '</span>';
 				echo '<br>';
 				echo '</fieldset>';
-				echo '<input value=';
+				echo '<input value="';
 				echo lang("Create");
-				echo 'class="btn btn-primary btn-md" type="submit">';
+				echo '" class="btn btn-primary btn-md" type="submit">';
 			echo '</form>';
 		echo '</div>';
 	echo '</div>';

@@ -103,6 +103,7 @@ $lang['CreatePollsLogin'] = "Pollide loomiseks pead olema sisse logitud.";
 $lang['CrErr1'] = 'Küsimus ei saa olla tühi!';
 $lang['CrErr2'] = 'Vähemalt 2 vastusevalikut on vaja!';
 $lang['CrErr3'] = 'Vastusevalikud ei saa olla samad!';
+$lang['CrErr4'] = 'Vastusevalikud tuleb täita järjest!';
 
 //Account
 $lang['Hello'] = 'Tere';

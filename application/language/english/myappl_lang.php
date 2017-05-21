@@ -104,6 +104,7 @@ $lang['CreatePollsLogin'] = "You need to be logged in to create polls.";
 $lang['CrErr1'] = 'Question cannot be blank!';
 $lang['CrErr2'] = 'At least 2 answer options required!';
 $lang['CrErr3'] = 'Answer options cannot be identical!';
+$lang['CrErr4'] = 'Fill in options in proper order!';
 
 
 //Account
