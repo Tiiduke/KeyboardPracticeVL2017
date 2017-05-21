@@ -33,8 +33,11 @@
 		echo '<a href=" ' . base_url() . 'index.php/welcome/delAccount">' . lang("DelAccount") . '</a>';
 		echo "<br>";
 	} else {
-		echo '<div id="beLoggedIn3">'.lang("NotLoggedIn").'</div>';
+		echo '<br>';
+		echo '<div id="beLoggedIn3">';
+		echo lang("NotLoggedIn");
 		include 'registerLogin.php';
+		echo '</div>';
 	}
 ?>
 </div>

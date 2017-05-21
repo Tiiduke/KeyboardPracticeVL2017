@@ -22,6 +22,7 @@ function test_input($data) {
 
 if ($email == "") {
 	echo '<div id="beLoggedIn2">';
+	echo '<br>';
 	echo lang("CreatePollsLogin");
 	include 'registerLogin.php';
 	echo '</div>';
