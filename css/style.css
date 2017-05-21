@@ -87,11 +87,15 @@
 	width: 98%;
 	margin-left: 1%;
 }
-#beLoggedIn1, #beLoggedIn2, #beLoggedIn3 {
+#beLoggedIn1, #beLoggedIn2{
 	margin-left: 1%;
 }
 
-#aboutingAbout, #contactingCons {
+#aboutingAbout, #contactingCons, #accountDetails {
+	margin-left: 1%;
+}
+#yourPollsTable {
+	width: 98%;
 	margin-left: 1%;
 }
 

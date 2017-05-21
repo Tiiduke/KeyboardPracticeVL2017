@@ -1,3 +1,4 @@
+<div id="accountDetails">
 <?php
 	if (isset($_SESSION["firstname"])) {
 		echo lang("Hello");
@@ -35,3 +36,4 @@
 		echo '<div id="beLoggedIn3">'.lang("NotLoggedIn").'</div>';
 	}
 ?>
+</div>
