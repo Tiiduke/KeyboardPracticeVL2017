@@ -77,7 +77,9 @@
 				echo '</table>';
 			}
 		} elseif ($email == "") {
+			echo '<br>';
 			echo lang("AnswerPollsLogin");
+			include 'registerLogin.php';
 		} else {
 			if (empty($_GET['pollid'])){
 				//enter code to display available polls or suggest a random poll

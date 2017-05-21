@@ -21,7 +21,10 @@ function test_input($data) {
 }
 
 if ($email == "") {
-	echo '<div id="beLoggedIn2">'.lang("CreatePollsLogin").'</div>';
+	echo '<div id="beLoggedIn2">';
+	echo lang("CreatePollsLogin");
+	include 'registerLogin.php';
+	echo '</div>';
 } else {
 	$sqlselect = "SELECT UserID FROM Usertest WHERE Email='$email' LIMIT 1";
 	$sqlresult = $conn->query($sqlselect);

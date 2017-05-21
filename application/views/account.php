@@ -34,6 +34,7 @@
 		echo "<br>";
 	} else {
 		echo '<div id="beLoggedIn3">'.lang("NotLoggedIn").'</div>';
+		include 'registerLogin.php';
 	}
 ?>
 </div>

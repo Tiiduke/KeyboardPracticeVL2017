@@ -12,6 +12,7 @@ $lang['menu_mainCP'] = 'Loo Poll';
 $lang['Account'] = 'Konto';
 $lang['Login'] = 'Logi sisse';
 $lang['SignUp'] = 'Registreeri';
+$lang['SignUpNow'] = 'Pole kontot? Registreeri kohe!';
 $lang['UE'] = 'Kasutajanimi/e-mail: ';
 $lang['UEIn'] = 'Kasutaja/e-mail';
 $lang['Par'] = 'Parool:';

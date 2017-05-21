@@ -12,6 +12,7 @@ $lang['menu_mainCP'] = 'Create Polls';
 $lang['Account'] = 'Account';
 $lang['Login'] = 'Log in';
 $lang['SignUp'] = 'Sign up';
+$lang['SignUpNow'] = "Don't have an account? Sign up now!";
 $lang['UE'] = 'Username/e-mail: ';
 $lang['UEIn'] = 'Username/e-mail';
 $lang['Par'] = 'Password:';
