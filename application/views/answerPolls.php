@@ -11,6 +11,9 @@
 		
 		include 'dbConnect.php';
 		
+		if (!empty($_SESSION['Email']) && !empty($_GET['pollid'])){
+			echo lang('ReturnToFindPolls');
+		}
 		$sqlcheckifanswered = "SELECT PollID, UserID, Answer FROM Answerstest WHERE PollID = '$pollid' AND UserID = '$userid'";
 		$getcheckresult = $conn->query($sqlcheckifanswered);
 		if ($getcheckresult->num_rows > 0) {
@@ -79,8 +82,23 @@
 		} elseif ($email == "") {
 			echo '<br>';
 			echo lang("AnswerPollsLogin");
-			include 'registerLogin.php';
-		} else {
+			echo '<br><br>';
+			echo '<div id="login-content2">';
+			echo '<form action="' . base_url() . 'index.php/welcome/answerPolls?pollid=' . $_GET['pollid'] . '" method="post">';
+			echo '<fieldset id="inputs2">';
+			echo '<label for="username2">' . lang("UE") . '</label><br>';
+			echo '<input id="username2" type="email" name="Email" placeholder=' . lang("UEIn") . ' required><br><br>';  
+			echo '<label for="password2">' . lang("Par") . '</label><br>';
+			echo '<input id="password2" type="password" name="Password" placeholder=' . lang("ParIn") . ' required>';
+			echo '</fieldset>';
+			echo '<fieldset id="actions2">';
+			echo '<input type="submit" id="submit2" value="Log in">';
+			echo '</fieldset>';
+			echo '</form>';
+			echo '</div>';                     
+			echo '<br><br>';
+			echo '<a href="'. base_url() . 'index.php/welcome/signUp">'. lang("SignUpNow") . '</a>';
+			} else {
 			if (empty($_GET['pollid'])){
 				//enter code to display available polls or suggest a random poll
 			} elseif (empty($_GET['option'])) {
