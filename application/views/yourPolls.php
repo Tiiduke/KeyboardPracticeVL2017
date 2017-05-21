@@ -33,7 +33,17 @@ redirect you to the login screen
 			if ($pollsresult->num_rows > 0) {
 				echo lang("YourPollsIntro");
 				echo '<table class="table table-striped table-bordered table-hover">';
-				echo "<tr><th>PollID:</th><th>Author:</th><th>Category:</th><th>Question:</th><th>Delete:</th></tr>"; 
+				echo "<tr><th>";
+				echo lang("PollID");
+				echo ":</th><th>";
+				echo lang("Author");
+				echo ":</th><th>";
+				echo lang("Category");
+				echo ":</th><th>";
+				echo lang("Question");
+				echo ":</th><th>";
+				echo lang("Delete");
+				echo ":</th></tr>"; 
 				// output data of each row
 				while($row = $pollsresult->fetch_assoc()) {
 					echo "<tr><td>"; 
@@ -57,7 +67,19 @@ redirect you to the login screen
 			if ($answersresult->num_rows > 0) {
 				echo lang("YourPollsAnswers");
 				echo '<table class="table table-striped table-bordered table-hover">';
-				echo "<tr><th>PollID:</th><th>Author:</th><th>Category:</th><th>Question:</th><th>Answer Count:</th><th>Answers:</th></tr>"; 
+				echo "<tr><th>";
+				echo lang("PollID");
+				echo ":</th><th>";
+				echo lang("Author");
+				echo ":</th><th>";
+				echo lang("Category");
+				echo ":</th><th>";
+				echo lang("Question");
+				echo ":</th><th>";
+				echo lang("AnswerCount");
+				echo ":</th><th>";
+				echo lang("Answers");
+				echo ":</th></tr>"; 
 				// output data of each row
 				while($row = $answersresult->fetch_assoc()) {
 					echo "<tr><td>"; 
