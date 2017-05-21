@@ -66,7 +66,7 @@ $lang['NoResults'] = 'Ei leitud ühtegi tulemust.';
 //Answer Polls
 $lang['AnswerPollsLogin'] = "Pollide vastamiseks pead olema sisse logitud.";
 $lang['AnswerThanks'] = "Täname! Teie vastus on salvestatud.";
-
+$lang['AlreadyAnswered'] = "Oled sellele pollile juba vastanud!";
 
 //Find polls category subs
 $lang['Category1'] = 'Poliitika';
@@ -82,6 +82,12 @@ $lang['YourPollsNone'] = "Sa ei ole loonud veel ühtegi polli.";
 $lang['YourPollsLogin'] = "Pollide vaatamiseks pead olema sisse logitud.";
 $lang['Delete'] = "Kustuta";
 $lang['PollDeleteSuccess'] = "Poll edukalt kustutatud!";
+$lang['PollID'] = "Polli ID";
+$lang['Author'] = "Autor";
+$lang['Category'] = "Kategooria";
+$lang['Question'] = "Küsimus";
+$lang['AnswerCount'] = "Vastuste arv";
+$lang['Answers'] = "Vastused";
 
 //Create Polls
 $lang['CrNewPoll'] = 'Loo uus poll';

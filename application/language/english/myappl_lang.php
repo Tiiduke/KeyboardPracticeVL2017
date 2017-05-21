@@ -65,6 +65,7 @@ $lang['NoResults'] = 'No results found.';
 //Answer Polls
 $lang['AnswerPollsLogin'] = "You need to be logged in to answer polls.";
 $lang['AnswerThanks'] = "Thank you! Your answer has been saved.";
+$lang['AlreadyAnswered'] = "You have already answered to this poll!";
 
 
 //Find polls category subs
@@ -81,6 +82,13 @@ $lang['YourPollsNone'] = "You haven't created any polls yet.";
 $lang['YourPollsLogin'] = "You need to be logged in to view your polls.";
 $lang['Delete'] = "Delete";
 $lang['PollDeleteSuccess'] = "Poll successfully deleted!";
+$lang['PollID'] = "Poll ID";
+$lang['Author'] = "Author";
+$lang['Category'] = "Category";
+$lang['Question'] = "Question";
+$lang['AnswerCount'] = "Answer Count";
+$lang['Answers'] = "Answers";
+
 
 //Create Polls
 $lang['CrNewPoll'] = 'Create a new poll';

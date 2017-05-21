@@ -2,14 +2,81 @@
 	<?php
 		$email = $_SESSION['email'];
 		$userid = $_SESSION["userid"];
-		
+		$pollid = $_GET['pollid'];
+		$language = lang('Language');
+
 		if(!isset($_SESSION)) { 
 			session_start();
 		}
 		
 		include 'dbConnect.php';
 		
-		if ($email == "") {
+		$sqlcheckifanswered = "SELECT PollID, UserID, Answer FROM Answerstest WHERE PollID = '$pollid' AND UserID = '$userid'";
+		$getcheckresult = $conn->query($sqlcheckifanswered);
+		if ($getcheckresult->num_rows > 0) {
+			echo "<br>";
+			echo lang("AlreadyAnswered");
+			echo "<br><br>";
+			$sqlanswers = "SELECT Polltest.PollID, Usertest.Email, Polltest.Category, Questiontest.Question, COUNT(Answerstest.Answer) AS Answers, Questiontest.Option1, ROUND(((SUM(CASE WHEN Answerstest.Answer = '1' THEN 1 ELSE 0 END))/(COUNT(Answerstest.Answer)))*100,1) AS Answers1, Questiontest.Option2, ROUND(((SUM(CASE WHEN Answerstest.Answer = '2' THEN 1 ELSE 0 END))/(COUNT(Answerstest.Answer)))*100,1) AS Answers2, Questiontest.Option3, ROUND(((SUM(CASE WHEN Answerstest.Answer = '3' THEN 1 ELSE 0 END))/(COUNT(Answerstest.Answer)))*100,1) AS Answers3, Questiontest.Option4, ROUND(((SUM(CASE WHEN Answerstest.Answer = '4' THEN 1 ELSE 0 END))/(COUNT(Answerstest.Answer)))*100,1) AS Answers4, Questiontest.Option5, ROUND(((SUM(CASE WHEN Answerstest.Answer = '5' THEN 1 ELSE 0 END))/(COUNT(Answerstest.Answer)))*100,1) AS Answers5 FROM Usertest INNER JOIN ((Polltest INNER JOIN Answerstest ON Polltest.PollID = Answerstest.PollID) INNER JOIN Questiontest ON Polltest.PollID = Questiontest.PollID) ON Usertest.UserID = Polltest.UserID WHERE Polltest.PollID = '$pollid' AND Questiontest.Language = '$language' GROUP BY Answerstest.PollID ORDER BY Polltest.PollID ASC";
+			$answersresult = $conn->query($sqlanswers);
+			if ($answersresult->num_rows > 0) {
+				echo '<table class="table table-striped table-bordered table-hover">';
+				echo "<tr><th>";
+				echo lang("PollID");
+				echo ":</th><th>";
+				echo lang("Author");
+				echo ":</th><th>";
+				echo lang("Category");
+				echo ":</th><th>";
+				echo lang("Question");
+				echo ":</th><th>";
+				echo lang("AnswerCount");
+				echo ":</th><th>";
+				echo lang("Answers");
+				echo ":</th></tr>"; 
+				// output data of each row
+				while($row = $answersresult->fetch_assoc()) {
+					echo "<tr><td>"; 
+					echo $row['PollID'];
+					echo "</td><td>";   
+					echo $row['Email'];
+					echo "</td><td>";    
+					echo $row['Category'];
+					echo "</td><td>";    
+					echo $row['Question'];
+					echo "</td><td>";    
+					echo $row['Answers'];
+					echo "</td><td>";    
+					echo $row['Answers1'];
+					echo "%: ";    
+					echo $row['Option1'];
+					echo "<br>";    
+					echo $row['Answers2'];
+					echo "%: ";    
+					echo $row['Option2'];
+					if (!empty($row['Option3'])){
+						echo "<br>";    
+						echo $row['Answers3'];
+						echo "%: ";    
+						echo $row['Option3'];
+						if (!empty($row['Option4'])){
+							echo "<br>";    
+							echo $row['Answers4'];
+							echo "%: ";    
+							echo $row['Option4'];
+							if (!empty($row['Option5'])){
+								echo "<br>";    
+								echo $row['Answers5'];
+								echo "%: ";    
+								echo $row['Option5'];
+								echo "</td></tr>";
+							}
+						}
+					}
+				}
+				echo '</table>';
+			}
+		} elseif ($email == "") {
 			echo lang("AnswerPollsLogin");
 		} else {
 			if (empty($_GET['pollid'])){
